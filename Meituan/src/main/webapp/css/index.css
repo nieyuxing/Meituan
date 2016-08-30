@@ -1,19 +1,24 @@
 @charset "utf-8";
 /* CSS Document */
     	   	  
-   #all{ width:1170px; border:1px solid #9CC ; margin-left:59px;}	
-   #header{width:100%;height:157px;}	
-  .h_top{width:100%;height:28px; border:1px solid #999; line-height:29px; background-color:#E8E0E0}
-  .h_body{width:100%; height:105px ; }	    
+   #all{ width:100%; }	
+   #header{width:100%;height:157px;}
+   #body-header-box01 {width: 100%;height: 29px;background-color: #F9F9F9;border-bottom: 1px solid #EEE; }	
+  .h_top{width:89%;
+	height: 28px;
+	font-size: 12px;
+	line-height: 28px;
+	margin-left:70px;}
+  .h_body{width:89%; height:105px ;margin-left:70px; }	    
   .h_top_left{float:left}
   .h_top_right{float:right; margin-right:20px}	  
   .h_top_left li ,.h_top_right li{ list-style-type:none;float:left; margin-left:15px}
   .mymt ,.myshopping{ list-style:none; clear:both}
   #h_top_right_mymt,#h_top_right_myshopping,#h_top_right_shangjia{display:none}
   #img{ width:87px; height:58px; float:left; margin-left:15px; }	
-  .h_body_search{text-align:center; border:2px solid #0C6; width:434px; height:46px; margin:20px auto}
-  .h_body_search .text{ width:358px; height:46px; color:#999; float:left; font-size:14px;}
-  .h_body_search #search{width:76px; height:46px; line-height:46px; background-color:#4FC3B7; float:left; color:#FFF; font-size:14px}
+  .h_body_search{text-align:center; border:2px solid #0C6; width:490px; height:42px; margin:20px auto}
+  .h_body_search .text{ width:358px; height:42px; color:#999; float:left; font-size:14px;}
+  .h_body_search #search{width:76px; height:42px; line-height:46px; background-color:#4FC3B7; float:right; color:#FFF; font-size:14px}
   .h_body_hot{width:434px ; height:30px; margin:auto;} 	
   .h_body_hot li{list-style:none; float:left; margin-right:17px;}
    body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
@@ -30,12 +35,12 @@ a:hover
 
 	#b_body_left ul li.sel{ background-color: #fff;}
 	body{
-		width:1300px;
+		width:100%;
 		height:550px;
 		margin:0 auto;
 	}
 	#body{
-		margin-left:59px;
+		margin-left:80px;
 	}
 	#b_head{
 		width:1170px;
@@ -161,6 +166,8 @@ a:hover
 		width:1300px;
 		height:6100px;
 		background-color:#FFF;
+		margin-left:20px;
+		margin-top:40px;
 	}
 	
 	#content #content-left{
@@ -173,6 +180,7 @@ a:hover
 		margin-left:-10px;
 		position:fixed;
 		top:30px;
+		left:30px;
 	}
 	
 	#content #content-middle{
@@ -257,11 +265,15 @@ a:hover
 		width:230px;
 		height:220px;
 		float:left;
+		font-size: 12px;
+		line-height: 18px;
+		font-family: "Hiragino Sans GB", ​"WenQ... Hei", ​tahoma, ​sans-serif;
 	}
 	#content #content-middle #box10 .box11 p{
 		color:#666;
 		margin:10px 0 15px 10px;
 		font-weight:bold;
+		font-size:14px;
 	}
 	#content #content-middle #box10 .box11 ul li a{
 		font-size:12px;
