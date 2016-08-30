@@ -18,6 +18,7 @@
 		<oracle.version>12.1.0.1</oracle.version>
 		<dbcp2.version>2.1.1</dbcp2.version>
 		<aspectj.version>1.8.9</aspectj.version>
+		<mail.versin>1.5.6</mail.versin>
 	</properties>
 
 	<dependencies>
@@ -137,7 +138,7 @@
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
-			<version>1.5.6</version>
+			<version>${mail.versin}</version>
 		</dependency>
 
 	</dependencies>
