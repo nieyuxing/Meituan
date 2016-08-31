@@ -8,35 +8,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="backMeituan/assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="backMeituan/assets/css/font-awesome.min.css" />
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="backMeituan/assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
+
 		<link rel="stylesheet" href="backMeituan/assets/css/ace.min.css" />
 		<link rel="stylesheet" href="backMeituan/assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="backMeituan/assets/css/ace-skins.min.css" />
         <link rel="stylesheet" href="backMeituan/css/style.css"/>
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="backMeituan/assets/css/ace-ie.min.css" />
-		<![endif]-->
+
 		<script src="backMeituan/assets/js/ace-extra.min.js"></script>
-		<!--[if lt IE 9]>
-		<script src="backMeituan/assets/js/html5shiv.js"></script>
-		<script src="backMeituan/assets/js/respond.min.js"></script>
-		<![endif]-->
-        <!--[if !IE]> -->
+
 		<script src="backMeituan/js/jquery-1.9.1.min.js"></script>        
-		<!-- <![endif]-->
-		<!--[if IE]>
-         <script type="text/javascript">window.jQuery || document.write("<script src='backMeituan/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");</script>
-        <![endif]-->
+
 		<script type="text/javascript">
 			if("ontouchend" in document) document.write("<script src='backMeituan/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
 		</script>
 		<script src="backMeituan/assets/js/bootstrap.min.js"></script>
 		<script src="backMeituan/assets/js/typeahead-bs2.min.js"></script>
-		<!--[if lte IE 8]>
-		  <script src="backMeituan/assets/js/excanvas.min.js"></script>
-		<![endif]-->
+
 		<script src="backMeituan/assets/js/ace-elements.min.js"></script>
 		<script src="backMeituan/assets/js/ace.min.js"></script>
         <script src="backMeituan/assets/layer/layer.js" type="text/javascript"></script>
@@ -190,7 +177,7 @@ $('.change_Password').on('click', function(){
 	 icon:2,
     }, 
 	function(){
-	  location.href="login.html";
+	  location.href="backMeituan/login.html";
         
     });
 });

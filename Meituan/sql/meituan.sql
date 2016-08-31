@@ -118,6 +118,23 @@ insert into type values(seq_type_tid.nextval,'生活服务',0);
 insert into type values(seq_type_tid.nextval,'购物',0);
 insert into type values(seq_type_tid.nextval,'丽人',0);
 
-insert into goods values(seq_goods_gid.nextval,'正新鸡扒','9.00',10001,'null','null','110',0,'');
+insert into type values(seq_type_tid.nextval,'火锅',110);
+insert into type values(seq_type_tid.nextval,'甜品',110);
+insert into type values(seq_type_tid.nextval,'小吃',110);
+insert into type values(seq_type_tid.nextval,'西餐',110);
+insert into type values(seq_type_tid.nextval,'东北菜',110);
+insert into type values(seq_type_tid.nextval,'湘菜',110);
+insert into type values(seq_type_tid.nextval,'港菜',110);
 
+
+insert into goods values(seq_goods_gid.nextval,'正新鸡扒','9.00',10001,'null','null','110',0,'');
+insert into goods values(seq_goods_gid.nextval,'佳客来牛排','9.00',10001,'null','null','110',0,'');
+insert into goods values(seq_goods_gid.nextval,'门客牛排','9.00',10001,'null','null','110',0,'');
+insert into goods values(seq_goods_gid.nextval,'健康牛排','9.00',10001,'null','null','110',0,'');
+insert into goods values(seq_goods_gid.nextval,'至尊披萨','9.00',10001,'null','null','110',0,'');
+
+insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
+insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
+insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
+insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
