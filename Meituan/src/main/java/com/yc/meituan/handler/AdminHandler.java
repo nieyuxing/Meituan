@@ -24,6 +24,6 @@ public class AdminHandler {
 			map.put("errorMsg", "用户名或密码错误...");
 			return "backMeituan/login";
 		}
-		return "backMeituan/index";
+		return "../backMeituan/index";
 	}
 }
