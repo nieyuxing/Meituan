@@ -22,7 +22,7 @@ public class AdminHandler {
 		admin=adminService.login(admin);
 		if(admin == null){
 			map.put("errorMsg", "用户名或密码错误...");
-			return "backMeituan/login";
+			return "../backMeituan/login";
 		}
 		return "../backMeituan/index";
 	}

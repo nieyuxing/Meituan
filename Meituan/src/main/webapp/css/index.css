@@ -14,8 +14,10 @@
   .h_top_right{float:right; margin-right:20px}	  
   .h_top_left li ,.h_top_right li{ list-style-type:none;float:left; margin-left:15px}
   .mymt ,.myshopping{ list-style:none; clear:both}
-  #h_top_right_mymt,#h_top_right_myshopping,#h_top_right_shangjia{display:none}
-  #img{ width:87px; height:58px; float:left; margin-left:15px; }	
+  #h_top_right_mymt{display:none;z-index:2}
+  #h_top_right_myshopping{display:none}
+  #h_top_right_shangjia{display:none}
+  #img{ width:87px; height:58px; float:left; margin-left:100px; }	
   .h_body_search{text-align:center; border:2px solid #0C6; width:490px; height:42px; margin:20px auto}
   .h_body_search .text{ width:358px; height:42px; color:#999; float:left; font-size:14px;}
   .h_body_search #search{width:76px; height:42px; line-height:46px; background-color:#4FC3B7; float:right; color:#FFF; font-size:14px}
@@ -108,7 +110,6 @@ a:hover
 	}
 	
 	a:hover{
-			font-size:15px;
 			color:#00c3b0;
 			text-decoration:none;
 	}
@@ -159,7 +160,7 @@ a:hover
 		height:400px;
 		display:none;
 		z-index:1;
-		background-color:#0F0;
+		background-color:#fff;
 		margin-left:250px;
 	}
 	#content{
