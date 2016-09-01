@@ -10,7 +10,6 @@
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
 </head>
 
-
 <body>
     <div id="findmima">
         <div id="findmima_logo">
