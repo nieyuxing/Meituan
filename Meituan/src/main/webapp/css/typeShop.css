@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+#details-type {
+	width: 100%;
+	height: 32px;
+}
+#details-type .uuu {
+	width: 100%;
+	height: 32px;
+	line-height: 30px;
+	text-align: center;
+	margin: 10px 0 10px 0;
+	font-size: 12px;
+	font-weight: bold;
+	border: 1px solid #EEE;
+}
+#details-down {
+	width: 100%;
+	height: 2000px;
+}
+#details-down-left-on {
+	width: 75%;
+	float: left;
+}
+#details-type .left-box02-up-li {
+	width: 94px;
+	height: 32px;
+	border-right: 1px solid #eee;
+	float: left;
+}
+#details-type .left-box02-up-li a {
+	width: 94px;
+	text-decoration: none;
+}
+#details-type .left-box02-up-li a:hover {
+	color: #2BB8AA;
+}
+.details-down-left-class {
+	width: 346px;
+	height: 336px;
+	margin: 10px 16px 10px 0;
+	float: left;
+	border: 1px solid #eee;
+}
+.details-down-left-class a {
+	width: 346px;
+	height: 214px;
+	margin-bottom: 5px;
+}
+.details-down-left-class .typeShop-box01 {
+	width: 310px;
+	height: 53px;
+	padding: 6px 13px 18px 13px;
+}
+.details-down-left-class .typeShop-box02 {
+	width: 308px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px 0 18px;
+	background-color: #F7F7F7;
+	border-top: 1px dashed #eee;
+	color: #666;
+}
+.details-down-left-class .typeShop-box01 .typeShop-box01-up {
+	width: 310px;
+	height: 24px;
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+.details-down-left-class .typeShop-box01 .typeShop-box01-up a {
+	font-size: 16px;
+	color: #666;
+	text-decoration: none;
+}
+.details-down-left-class .typeShop-box01 .typeShop-box01-down {
+	width: 310px;
+	height: 20px;
+	font-size: 14px;
+}
+.details-down-left-class .typeShop-box01 .typeShop-box01-down a {
+	font-size: 14px;
+	color: #999;
+	text-decoration: none;
+}
+#typeShop {
+	width: 100%;
+	height: 1780px;
+}
+#body-content-on-content #details-down .details-down-right h5 {
+	margin-left: 20px;
+}
+#body-content-on-content #details-down .details-down-right .like01 {
+	height: 170px;
+	font-size: 14px;
+	border-bottom: 1px dashed #eee;
+	margin-bottom: 10px;
+}
+#checkPrick {
+	width: 94px;
+	height: 100px;
+	border: 1px solid #eee;
+	position: absolute;
+	z-index: 1;
+	background-color: #FFF;
+	font-size: 12px;
+	margin-left: 380px;
+	display: none;
+}
+#checkPrick .checkPrick-li {
+	width: 92px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
+}
+#checkPrick .checkPrick-li:hover {
+	background-color: #eee;
+	color: #2BB8AA;
+}

@@ -4,7 +4,6 @@
 * {
 	padding: 0px;
 	margin: 0 auto;
-	font-family:"微软雅黑"
 }
 ul li {
 	list-style: none;
@@ -20,6 +19,7 @@ a {
 	width: 100%;
 	height: 29px;
 	background-color: #F9F9F9;
+	border-bottom:1px solid #CCC;
 }
 #body-header #body-header-box01 .h_top {
 	width: 72%;
@@ -100,7 +100,7 @@ a:hover {
 	font-family:"Hiragino Sans GB",​" Mic...o Hei",​arial,​sans-serif;
 }
 #body-content #body-content-on{
-	width:100%;
+	width:72%;
 }
 #body-content #body-content-on #on-one{
 	width:100%;
@@ -318,7 +318,7 @@ a:hover {
 }
 #body-footer #footer-box01 #body-footer-box .box11 ul li a {
 	color: #999;
-	line-height: 21.6px;
+	line-height:21.6px;
 }
 #body-footer #footer-box01 #body-footer-box #box12 {
 	width: 250px;
@@ -345,5 +345,5 @@ a:hover {
 #body-footer #footer-box02 {
 	height: 218px;
 	border-top: 1px solid #999;
-	background-image: url(../images/footer111.jpg);
+	background-image: url(images/footer111.jpg);
 }
