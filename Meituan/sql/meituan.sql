@@ -125,6 +125,7 @@ insert into type values(seq_type_tid.nextval,'西餐',110);
 insert into type values(seq_type_tid.nextval,'东北菜',110);
 insert into type values(seq_type_tid.nextval,'湘菜',110);
 insert into type values(seq_type_tid.nextval,'港菜',110);
+insert into type values(seq_type_tid.nextval,'新林宾馆',111);
 
 
 insert into goods values(seq_goods_gid.nextval,'正新鸡扒','9.00',10001,'null','null','110',0,'');
@@ -138,3 +139,9 @@ insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉'
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
+select t.*,(
+select tname from type where tid in (select tfid from type)
+) from type t;
+
+select * from type
+select a.*,b.tname ftname from type a,type b where a.tfid=b.tid

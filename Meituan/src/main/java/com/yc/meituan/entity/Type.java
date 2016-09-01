@@ -4,7 +4,14 @@ public class Type {
 	private int tid;
 	private String tname;
 	private int tfid;
+	private String ftname;
 	
+	public String getFtname() {
+		return ftname;
+	}
+	public void setFtname(String ftname) {
+		this.ftname = ftname;
+	}
 	public Type() {
 	}
 	public int getTid() {
@@ -27,6 +34,7 @@ public class Type {
 	}
 	@Override
 	public String toString() {
-		return "Type [tid=" + tid + ", tname=" + tname + ", tfid=" + tfid + "]";
+		return "Type [tid=" + tid + ", tname=" + tname + ", tfid=" + tfid
+				+ ", ftname=" + ftname + "]";
 	}
 }

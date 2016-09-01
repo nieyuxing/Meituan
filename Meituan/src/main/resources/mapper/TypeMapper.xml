@@ -4,6 +4,6 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.meituan.mapper.TypeMapper">
 	<select id="listAll"  resultType="Type">
-		select * from type 
-	</select>
+		select a.*,b.tname ftname from type a,type b where a.tfid=b.tid
+	</select> 
 </mapper>
