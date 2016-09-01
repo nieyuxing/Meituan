@@ -1,7 +1,6 @@
 @charset "utf-8";
-/* CSS Document */
-    	   	  
-   #all{ width:100%; }	
+/* CSS Document */  
+   #all{ width:100%;font-family:"微软雅黑" }	
    #header{width:100%;height:157px;}
    #body-header-box01 {width: 100%;height: 29px;background-color: #F9F9F9;border-bottom: 1px solid #EEE; }	
   .h_top{width:89%;
@@ -26,7 +25,7 @@
    body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
 li, dl, dt, dd, form, a, fieldset, input, th, td
 {margin: 0; padding: 0; border: 0; outline: none;}
-body{line-height: 1;font-size: 88% /* Decide for yourself if you want to include this. */;}
+body{line-height: 1;font-size: 88% ;}
 h1, h2, h3, h4, h5, h6{font-size: 100%;padding: .6em 0;margin: 0 15px;}
 ul, ol{list-style: none;}
 a{color: black; text-decoration:none;}
@@ -47,7 +46,7 @@ a:hover
 	#b_head{
 		width:1170px;
 		height:40px;
-		background-color:#0CC;
+		background-color:#2BB8AA;
 	}
 	#b_head_left{
 		width:246px;
@@ -73,12 +72,12 @@ a:hover
 	}
 	#b_head_right a{
 		height:20px;
+		line-height:20px;
 		text-decoration:none;
 		font-size:20px;
 		font-weight:700;
 		color:#FFF;
 		text-align:center;
-		margin-left:20px;
 	}
 	#b_head_right ul li{
 		float:left;
@@ -87,22 +86,18 @@ a:hover
 		text-align:center;
 	}
 	#b_head_right ul li:hover{
-		background-color:#00c3b0;;
+		background-color:#00c3b0;
 	}
 	#b_body{
-	
 		height:400px;
 		width:1170px;
 	}
-	#b_body_left{
-		
+	#b_body_left{	
 		height:400px;
 		width:246px;
-		float:left;
-		
+		float:left;		
 	}
-	#b_body_right{
-		
+	#b_body_right{	
 		height:400px;
 		width:920px;
 		font-weight:700px;
