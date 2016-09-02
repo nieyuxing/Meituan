@@ -21,7 +21,6 @@ public class UserHandler {
 	public void listAll(PrintWriter out,PrintWriter pw) {
 		System.out.println("到达listAll方法...");
 		List<User> users = userService.listAll();
-		System.out.println(users);
 		Gson gson=new Gson();
 		out.println(gson.toJson(users));
 		out.flush();

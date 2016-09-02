@@ -160,18 +160,9 @@
 				class="add_name"><input name="真实姓名" type="text"
 					class="text_add" /></span>
 				<div class="prompt r_f"></div></li>
-			<li><label class="label_name">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label><span
-				class="add_name"> <label><input
-						name="form-field-radio" type="radio" checked="checked" class="ace" /><span
-						class="lbl">男</span></label>&nbsp;&nbsp;&nbsp; <label><input
-						name="form-field-radio" type="radio" class="ace" /><span
-						class="lbl">女</span></label>&nbsp;&nbsp;&nbsp; <label><input
-						name="form-field-radio" type="radio" class="ace" /><span
-						class="lbl">保密</span></label>
-			</span>
-				<div class="prompt r_f"></div></li>
-			<li><label class="label_name">固定电话：</label><span
-				class="add_name"><input name="固定电话" type="text"
+			
+			<li><label class="label_name">密码：</label><span
+				class="add_name"><input name="密码" type="text"
 					class="text_add" /></span>
 				<div class="prompt r_f"></div></li>
 			<li><label class="label_name">移动电话：</label><span
@@ -182,17 +173,11 @@
 				class="add_name"><input name="电子邮箱" type="text"
 					class="text_add" /></span>
 				<div class="prompt r_f"></div></li>
-			<li class="adderss"><label class="label_name">家庭住址：</label><span
-				class="add_name"><input name="家庭住址" type="text"
+			<li class="adderss"><label class="label_name">身份证：</label><span
+				class="add_name"><input name="身份证" type="text"
 					class="text_add" style="width: 350px" /></span>
 				<div class="prompt r_f"></div></li>
-			<li><label class="label_name">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态：</label><span
-				class="add_name"> <label><input
-						name="form-field-radio1" type="radio" checked="checked"
-						class="ace" /><span class="lbl">开启</span></label>&nbsp;&nbsp;&nbsp; <label><input
-						name="form-field-radio1" type="radio" class="ace" /><span
-						class="lbl">关闭</span></label></span>
-				<div class="prompt r_f"></div></li>
+			
 		</ul>
 	</div>
 </body>
