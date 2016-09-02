@@ -110,8 +110,16 @@
 	height: 39px;
 	background-color: #FAFAFA;
 }
-.b_body_left_li_a {
+.b_body_left_li:hover{
+	background-color:#FFF;
+}
+
+.b_body_left_li a {
 	margin-left: 20px;
+	text-decoration:none;
+}
+.b_body_left_li a:hover{
+	color:#2BB7AA;
 }
 #b_body_center {
 	position: absolute;

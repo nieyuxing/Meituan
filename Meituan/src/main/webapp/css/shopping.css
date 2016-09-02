@@ -11,6 +11,9 @@ ul li {
 a {
 	text-decoration: none;
 }
+a:hover{
+	color:#2BB7AA;
+}
 #body-header {
 	width: 100%;
 	height: 125px;
