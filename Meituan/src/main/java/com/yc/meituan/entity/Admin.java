@@ -6,6 +6,8 @@ public class Admin {
 	private String pwd;
 	
 	
+	public Admin() {
+	}
 	public int getAid() {
 		return aid;
 	}

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.meituan.entity.Admin;
-import com.yc.meituan.entity.Encrypt;
 import com.yc.meituan.mapper.AdminMapper;
 import com.yc.meituan.service.AdminService;
 
