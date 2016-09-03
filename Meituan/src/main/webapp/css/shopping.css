@@ -11,6 +11,9 @@ ul li {
 a {
 	text-decoration: none;
 }
+a:hover{
+	color:#2BB7AA;
+}
 #body-header {
 	width: 100%;
 	height: 125px;
@@ -112,38 +115,40 @@ a:hover {
 	font-size:24px;
 	line-height:26px;
 }
+
+
 #body-content #body-content-on #on-two{
 	width:100%;
 	margin-bottom:10px;
 }
-#body-content #body-content-on #on-two #shopping{
+#shopping-table{
 	width:100%;
 	border:1px solid #EEE;
 	font-size:12px;
 	line-height:18px;
 	text-align:center;
 }
-#body-content #body-content-on #on-two table{
+table{
 	width:100%;
 	font-size:12px;
 	line-height:18px;
 	text-align:center;
 }
 
-#body-content #body-content-on #on-two .list-up{
+.list-up{
 	width:100%;
 	height:34px;
 	background-color:#F7F7F7;	
 }
-#body-content #body-content-on #on-two .list-content01{
+.list-content01{
 	width:100%;
 	height:84px;
 }
-#body-content #body-content-on #on-two .desc{
+.desc{
 	text-align:left;
 	padding-left:10px;
 }
-#body-content #body-content-on #on-two .cart-quantity{
+.cart-quantity{
 	width:98px;
 	height:34px;
 	border:1px solid #EEE;

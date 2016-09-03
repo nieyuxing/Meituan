@@ -110,8 +110,16 @@
 	height: 39px;
 	background-color: #FAFAFA;
 }
-.b_body_left_li_a {
+.b_body_left_li:hover{
+	background-color:#FFF;
+}
+
+.b_body_left_li a {
 	margin-left: 20px;
+	text-decoration:none;
+}
+.b_body_left_li a:hover{
+	color:#2BB7AA;
 }
 #b_body_center {
 	position: absolute;
@@ -293,23 +301,18 @@
 #body-content-on-content #details-down #details-down-left #left-box02 #left-box02-down {
 	width: 100%;
 }
-#body-content-on-content #details-down #details-down-left #left-box02 #left-box02-down .left-box02-down-li {
-	width: 97%;
-	height: 145px;
-	padding: 20px 10px 10px 10px;
-	border-bottom: 1px solid #eee;
-}
-#body-content-on-content #details-down .page{
+
+.myMeituanPageNum{
 	width:100%;
 	height:40px;
 	padding-top:20px;
 	margin-top:50px;
 	text-align:center;
 }
-#body-content-on-content #details-down .page ul{
+.myMeituanPageNum ul{
 	width:300px;
 }
-#body-content-on-content #details-down .page ul li{
+.myMeituanPageNum ul li{
 	width:34px;
 	height:34px;
 	line-height:34px;
@@ -320,21 +323,26 @@
 	font-size:14px;
 	font-weight:bold;
 }
-#body-content-on-content #details-down .page ul li a{
+.myMeituanPageNum ul li a{
 	text-decoration:none;
 	color:#2BB8AA;
 }
-#body-content-on-content #details-down .page .current{
+.myMeituanPageNum .current{
 	background-color:#2BB8AA;
 }
-#body-content-on-content #details-down .page .current a{
+.myMeituanPageNum .current a{
 	color:#FFF;
 }
-#body-content-on-content #details-down .page .next{
+.myMeituanPageNum .next{
 	width:68px;
 	height:34px;
 }
-
+.left-box02-down-li {
+	width: 97%;
+	height: 145px;
+	padding: 20px 10px 10px 10px;
+	border-bottom: 1px solid #eee;
+}
 .left-box02-down-li .li-left {
 	width: 17%;
 	float: left;

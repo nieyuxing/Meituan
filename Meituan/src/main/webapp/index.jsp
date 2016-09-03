@@ -9,11 +9,7 @@
 <link href="css/index.css"  type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/index.js"></script>   
-<style type="text/css">
-#b_body_center ul li{text-decoration:none;margin-left:15px; margin-top:10px;}
-</style>
 </head>
-
 <body>
     <div id="all">
       <!-- 头部-->
@@ -69,15 +65,12 @@
               </div>
               
                <ul class="h_body_hot">
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>
-                   <li><a href="#">蛋糕</a></li>  
-                   <li><a href="#">蛋糕</a></li>   
+                   <li><a href="page/typeShop.jsp">美食</a></li>
+                   <li><a href="page/typeShop.jsp">酒店/客栈</a></li>
+                   <li><a href="page/typeShop.jsp">KTV</a></li>
+                   <li><a href="page/typeShop.jsp">休闲娱乐</a></li>
+                   <li><a href="page/typeShop.jsp">生活服务</a></li>
+                   <li><a href="page/typeShop.jsp">新品上架</a></li>
               </ul>
            </div>
            <!-- 下-->
@@ -89,10 +82,10 @@
     	<div id="b_head_left"><a href="#">全部分类</a></div>
         <div id="b_head_right">
             <ul>
-                <li><a href="#">首页</a></li>
-                <li><a href="#">今日新单</a></li>
-                <li><a href="#">购物</a></li>
-                <li><a href="#">名店抢购</a></li>
+                <li><a href="page/typeShop.jsp">首页</a></li>
+                <li><a href="page/typeShop.jsp">今日新单</a></li>
+                <li><a href="page/typeShop.jsp">购物</a></li>
+                <li><a href="page/typeShop.jsp">名店抢购</a></li>
             </ul>
         </div>
     </div>
@@ -116,18 +109,19 @@
         	  
         	</ul>
         </div>
+        
         <div id="b_body_right">
         	<div id="b_body_right_top">
             	<ul>
-            	<li class="b_body_right_li"><a class="b_body_left_li_a">美食</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">酒店/客栈</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">电影/在线选座</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">KTV</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">休闲娱乐</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">周边游/旅游</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">生活服务</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">购物</a></li>
-                <li class="b_body_right_li"><a class="b_body_left_li_a">丽人</a></li>
+            	<li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">美食</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">酒店/客栈</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">电影/在线选座</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">KTV</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">休闲娱乐</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">周边游/旅游</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">生活服务</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">购物</a></li>
+                <li class="b_body_right_li"><a class="b_body_left_li_a" href="page/typeShop.jsp">丽人</a></li>
               
             </ul>
             </div>
@@ -159,19 +153,19 @@
         	<div class="box3">
             	<div class="box8" id="meishi">
                     <div class="box4">
-                        <a href="" ><img src="images/meishi.jpg" /></a>
-                        <a href="" id="a">美食</a>
+                        <a href="page/typeShop.jsp" ><img src="images/meishi.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">美食</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -186,25 +180,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多美食团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多美食团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="xiuxian">
                     <div class="box4">
-                        <a href="" ><img src="images/xiuxian.jpg" /></a>
-                        <a href="" id="a">休闲娱乐</a>
+                        <a href="page/typeShop.jsp" ><img src="images/xiuxian.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">休闲娱乐</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -219,25 +213,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多休闲娱乐团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多休闲娱乐团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="dianying">
                     <div class="box4">
-                        <a href="" ><img src="images/dianying.jpg" /></a>
-                        <a href="" id="a">电影</a>
+                        <a href="page/typeShop.jsp" ><img src="images/dianying.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">电影</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -252,25 +246,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多电影团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多电影团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="jiudian">
                     <div class="box4">
-                        <a href="" ><img src="images/jiudian.jpg" /></a>
-                        <a href="" id="a">酒店</a>
+                        <a href="page/typeShop.jsp" ><img src="images/jiudian.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">酒店</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -285,25 +279,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多酒店团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多酒店团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="shenghuo">
                     <div class="box4">
-                        <a href="" ><img src="images/shenghuo.jpg" /></a>
-                        <a href="" id="a">生活服务</a>
+                        <a href="page/typeShop.jsp" ><img src="images/shenghuo.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">生活服务</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -318,25 +312,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多生活服务团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多生活服务团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="gouwu">
                     <div class="box4">
-                        <a href="" ><img src="images/gouwu.jpg" /></a>
-                        <a href="" id="a">购物</a>
+                        <a href="page/typeShop.jsp" ><img src="images/gouwu.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">购物</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -351,25 +345,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多购物团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多购物团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="liren">
                     <div class="box4">
-                        <a href="" ><img src="images/liren.jpg" /></a>
-                        <a href="" id="a">丽人</a>
+                        <a href="page/typeShop.jsp" ><img src="images/liren.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">丽人</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -384,25 +378,25 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多丽人团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多丽人团购，请点击查看></a>
                 </div>
             </div>
             <div class="box3">
             	<div class="box8" id="lvyou">
                     <div class="box4">
-                        <a href="" ><img src="images/lvyou.jpg" /></a>
-                        <a href="" id="a">旅游</a>
+                        <a href="page/typeShop.jsp" ><img src="images/lvyou.jpg" /></a>
+                        <a href="page/typeShop.jsp" id="a">旅游</a>
                     </div>
                     <div class="box5">
                         <ul>
-                            <li><a href="">美食</a></li>
-                            <li><a href="">代金券</a></li>
-                            <li><a href="">自助餐</a></li>
-                            <li><a href="">火锅</a></li>
-                            <li><a href="">烤烤烤肉</a></li>
-                            <li><a href="">香锅烤鱼</a></li>
-                            <li><a href="">西餐</a></li>
-                            <li><a href="">全部></a></li>
+                            <li><a href="page/typeShop.jsp">美食</a></li>
+                            <li><a href="page/typeShop.jsp">代金券</a></li>
+                            <li><a href="page/typeShop.jsp">自助餐</a></li>
+                            <li><a href="page/typeShop.jsp">火锅</a></li>
+                            <li><a href="page/typeShop.jsp">烤烤烤肉</a></li>
+                            <li><a href="page/typeShop.jsp">香锅烤鱼</a></li>
+                            <li><a href="page/typeShop.jsp">西餐</a></li>
+                            <li><a href="page/typeShop.jsp">全部></a></li>
                         </ul>
                     </div>
                 </div>
@@ -417,7 +411,7 @@
                     <div class="box7"></div>
                 </div>
                 <div class="box9">
-                	<a href="">更多旅游团购，请点击查看></a>
+                	<a href="page/typeShop.jsp">更多旅游团购，请点击查看></a>
                 </div>
             </div> 
             

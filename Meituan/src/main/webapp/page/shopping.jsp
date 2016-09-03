@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>美团网</title>
+<title>购物车</title>
 <link href="../css/shopping.css" type="text/css" rel="stylesheet" />
 </head>
 
@@ -66,7 +66,7 @@
             1/20
         </div>
         <div id="on-two">
-            <table id="shopping" cellspacing="0">
+            <table id="shopping-table" cellspacing="0">
                 <tbody>
                     <tr class="list-up">
                         <th width="60">
@@ -87,7 +87,7 @@
                                     	<td class="select-cartItem" width="60" rowspan="1" id="check">
                                         	<input type="checkbox" name="cartItem" id="" class="" value="">
                                         </td>
-                                        <td class="desc" width="auto">
+                                        <td class="desc" width="420">
                                         	<a href=""><img src="../images/yangpin.jpg" width="63" height="39">
                                             <span>麦琪：单人下午茶套餐，包间免费，提供免费WiFi</span></a> 
                                         </td>
@@ -111,7 +111,41 @@
                                 </tbody>
                             </table>
                         </td>                                     
-                    </tr>                     
+                    </tr>
+                    <!--重复添加效果--> 
+                    <tr class="list-content01">
+                    	<td id="shopping001" class="cartItem" colspan="6">
+                        	<table id="shopping001_one" cellspacing="0">
+                            	<tbody>
+                                	<tr>
+                                    	<td class="select-cartItem" width="60" rowspan="1" id="check">
+                                        	<input type="checkbox" name="cartItem" id="" class="" value="">
+                                        </td>
+                                        <td class="desc" width="420">
+                                        	<a href=""><img src="../images/yangpin.jpg" width="63" height="39">
+                                            <span>麦琪：单人下午茶套餐，包间免费，提供免费WiFi</span></a> 
+                                        </td>
+                                        <td class="price" width="70">
+                                        	￥<span class="J-price">12.9</span>
+                                        </td>
+                                        <td class="saleNum" width="150">
+                                        	<div class="cart-quantity">
+                                            	<button class="minus" mt-bind-onclick="decrease()" type="button" gaevent="top/minus" data-action="-">-</button>
+												<input class="text" type="text" value="1" mt-bind-value="quantity" mt-bind-onkeyup="" maxlength="4" autocomplete="off">
+												<button class="plus" mt-bind-onclick="increase()" type="button" gaevent="top/plus" data-action="+" for="J-cart-add">+</button>
+                                            </div>
+                                        </td>
+                                        <td class="moneyTotal" width="70">
+                                        	￥<span class="J-total">12.9</span>
+                                        </td>
+                                        <td class="list-delete" width="80">
+                                        	<a class="delete" mb-onclick="" gaevent="cart/delete" data-params="" href="">删除</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>                                     
+                    </tr>                    
                     <tr class="jiezhang">
                     	<td></td>
                         <td></td>
