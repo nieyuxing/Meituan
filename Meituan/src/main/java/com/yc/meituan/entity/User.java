@@ -4,14 +4,14 @@ public class User {
 		private int	  usid ;
 		private String	usname ;
 		private String	  uspwd;  
-		private int	  telnum ;  // --电话
+		private String	  telnum ;  // --电话
 		private String	  email ;  // --邮箱
-		private int	  purse ;         //   --钱包余额
-		private int	  idcard ;        // --身份证号码
+		private double	  purse ;         //   --钱包余额
+		private String	  idcard ;        // --身份证号码
 		
 		public User() {
 		}
-		public User(int usid, String usname, String uspwd, int telnum, String email, int purse, int idcard) {
+		public User(int usid, String usname, String uspwd, String telnum, String email, int purse, String idcard) {
 			this.usid = usid;
 			this.usname = usname;
 			this.uspwd = uspwd;
@@ -20,6 +20,12 @@ public class User {
 			this.purse = purse;
 			this.idcard = idcard;
 		}
+		//用户注册测试
+		public User(String uspwd,String email) {
+			this.uspwd = uspwd;
+			this.email = email;
+		}
+		
 		public int getUsid() {
 			return usid;
 		}
@@ -38,10 +44,10 @@ public class User {
 		public void setUspwd(String uspwd) {
 			this.uspwd = uspwd;
 		}
-		public int getTelnum() {
+		public String getTelnum() {
 			return telnum;
 		}
-		public void setTelnum(int telnum) {
+		public void setTelnum(String telnum) {
 			this.telnum = telnum;
 		}
 		public String getEmail() {
@@ -50,16 +56,16 @@ public class User {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		public int getPurse() {
+		public double getPurse() {
 			return purse;
 		}
 		public void setPurse(int purse) {
 			this.purse = purse;
 		}
-		public int getIdcard() {
+		public String getIdcard() {
 			return idcard;
 		}
-		public void setIdcard(int idcard) {
+		public void setIdcard(String idcard) {
 			this.idcard = idcard;
 		}
 		@Override

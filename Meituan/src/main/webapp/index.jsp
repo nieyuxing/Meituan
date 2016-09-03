@@ -3,6 +3,7 @@
 <!DOCTYPE html >
 <html>
 <head>
+<base href="/Meituan/"/>
 <meta charset="UTF-8">
 <title>美团网</title>
 <link href="css/index.css"  type="text/css" rel="stylesheet" />
@@ -112,7 +113,7 @@
         </div>
         <div id="b_body_center">
         	<ul id="types">
-        	
+        	  
         	</ul>
         </div>
         <div id="b_body_right">

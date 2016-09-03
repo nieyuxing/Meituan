@@ -64,7 +64,7 @@
                 <img src="../images/mail.png" />
               </div>
               <div id="content_right">
-                 <div><a href="javascript:void(0)" onClick="show1()">立即找回<a></div>
+                 <div><a href="javascript:void(0)" onClick="show1()">立即找回</a></div>
               </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                   <label><img src="../images/mail2.png"/></label><h3>邮件已发送...</h3>
                 </div>
                 <div class="two">
-                   <a class="goMail"href="javascript:void(0)" onClick="show2()">去邮箱收信</a>
+                   <a class="goMail" href="javascript:void(0)" onClick="show2()">去邮箱收信</a>
                 </div>
              </div>
            </div>
@@ -117,7 +117,6 @@
         <div id="findmima_footer">
           <p>&copy;meituan.com  <a href="" >京ICP证070791号</a>&nbsp;京公网安备11010502025545号</p>
         </div>
-    </div>
     
 <script type="application/javascript" src="../js/findPassword.js" ></script>
  

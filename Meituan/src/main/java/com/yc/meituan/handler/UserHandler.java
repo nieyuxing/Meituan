@@ -15,22 +15,26 @@ public class UserHandler {
   
 	@Autowired
 	private UserService userService;
-	
-  @RequestMapping(value="/register",method=RequestMethod.POST)
-    public int userRegister(String email,String uspwd,String passwordQuest){
-	    
-		return 1;
-   }
-  
+  //用户登录
   @RequestMapping(value="/login",method=RequestMethod.POST)
     public String userLogin(User user,ModelMap map){
 	    user= userService.login(user);
-	    System.out.println(user);
+	    System.out.println("user login.."+user);
 	    if(user==null){
 	    	map.put("errorMsg", "账号或密码错误!!!");
 	    	return "../page/login";
 	    }
 		return "../index";
   }
-  
+  //用户注册
+  @RequestMapping(value="/register",method=RequestMethod.POST)
+  public String userRegister(User user,ModelMap map){
+  	user=userService.userRegister(user);
+  	System.out.println(user);
+	  if(user==null){
+		  map.put("errorMsg","注册失败!!!");
+		  return "../page/register";
+	  }
+	  return "../page/login";
+    }
 }

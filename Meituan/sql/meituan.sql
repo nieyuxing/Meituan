@@ -110,6 +110,10 @@ insert into users values(seq_users_usid.nextval,'张七','a','15931619475','',nu
 insert into users values(seq_users_usid.nextval,'张八','a','15931619486','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'张九','a','15931619487','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'王五','a','15931619234','',null,null,'','');
+insert into users values(seq_users_usid.nextval,'nice','a','15931619254','13218qq.com',null,null,'','');
+
+insert into users values(seq_users_usid.nextval,seq_users_usid.nextval,'a','15931619200','222@163.com',null,null,'','')
+
 
 insert into type values(seq_type_tid.nextval,'美食',0);
 insert into type values(seq_type_tid.nextval,'酒店/客栈',0);
@@ -130,7 +134,6 @@ insert into type values(seq_type_tid.nextval,'湘菜',110);
 insert into type values(seq_type_tid.nextval,'港菜',110);
 insert into type values(seq_type_tid.nextval,'新林宾馆',111);
 
-
 insert into goods values(seq_goods_gid.nextval,'正新鸡扒','9.00',10001,'null','null',110,0,'');
 insert into goods values(seq_goods_gid.nextval,'佳客来牛排','9.00',10001,'null','null',110,0,'');
 insert into goods values(seq_goods_gid.nextval,'门客牛排','9.00',10001,'null','null',110,0,'');
@@ -145,6 +148,6 @@ insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉'
 
 select a.*,b.tname ftname from type a,type b where a.tfid=b.tid
 
-
+select * from users where usname='张三' and uspwd ='a'
 
 commit
