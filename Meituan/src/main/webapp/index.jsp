@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html >
 <html>
 <head>
 <meta charset="UTF-8">
@@ -11,7 +13,7 @@
 </style>
 </head>
 
-<body >
+<body>
     <div id="all">
       <!-- 头部-->
        <div id="header">
@@ -20,17 +22,17 @@
               <!-- 上-》左-->
               <ul class="h_top_left">
                  <li>
-                 <a href="page/login.html"><span style="color:#F69">登录</span></a>&nbsp;
-                 <a href="page/register.html">注册</a>
+                 <a href="page/login.jsp"><span style="color:#F69">登录</span></a>&nbsp;
+                 <a href="page/register.jsp">注册</a>
                  </li>
               </ul>
               <!--上-》右 -->
               <ul class="h_top_right">
                  <li>
-                   <a href="page/MyMeituan.html"><span>我的美团</span></a>
+                   <a href="page/MyMeituan.jsp"><span>我的美团</span></a>
                   <div>
 	                   <ul id="h_top_right_mymt">
-	                     <li class="mymt"><a href="page/order.html">我的订单</a></li>
+	                     <li class="mymt"><a href="page/order.jsp">我的订单</a></li>
 	                     <li class="mymt"><a href="" >我的评价</a></li>
 	                     <li class="mymt"><a href="">我的积分</a></li>
 	                     <li class="mymt"><a href="">我的余额</a></li>
@@ -40,7 +42,7 @@
                  </li>
                  <li><a href="">最近浏览</a></li>
                   <li>
-                   <a href="page/shopping.html"><span>我的购物车</span></a>
+                   <a href="page/shopping.jsp"><span>我的购物车</span></a>
                    <ul id="h_top_right_myshopping">
                      <li class="myshopping"><a href="">商品1</a></li>
                      <li class="myshopping"><a href="">商品2</a></li>
@@ -48,19 +50,18 @@
                  </li>
                  
                  <li>
-                   <a href="back/shopLogin.html"><span>我是商家</span></a>
+                   <a href="back/shopLogin.jsp"><span>我是商家</span></a>
                    <ul id="h_top_right_shangjia">
                      <li class="shangjia"><a href="">登录商家中心</a></li>
                      <li class="shangjia"><a href="">商家营销平台</a></li>
                    </ul>
                  </li>
-                 
               </ul>
            </div>
            </div>
            <!--中-->
            <div class="h_body">
-              <a id="img" href="meituan.html"><img src='images/meituan.com.png' /></a>
+              <a id="img" href="index.jsp"><img src='images/meituan.com.png' /></a>
               <div class="h_body_search">
                  <input class="text" type="text" placeholder=" &nbsp;&nbsp;请输入商品名称或地址等" name="text">
                  <a href="#" id="search"><span>搜索</span></a>

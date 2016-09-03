@@ -1,4 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,7 +9,7 @@
 </head>
 <body>
 	<div id="box1">
-    	<a href="../index.html"><img src="../images/login02.png"></a>
+    	<a href="../index.jsp"><img src="../images/login02.png"></a>
     </div>
     
     <div id="box2">
@@ -15,7 +17,7 @@
         	<img width="480px" height="370px" src="../images/login01.png">
         </div>
         <div id="right">
-        	<form class="login" method="post" action="">
+        	<form class="login" method="post" action="user/login">
             	<div id="none"></div>
                 <span>
                 	账号登录
@@ -24,11 +26,11 @@
                 
                 <div class="two">
 					<div class="two01"><img src="../images/email.png"></div>
-					<div class="two02"><input id="login-email" class="f-text" type="text" value="" placeholder="手机号/用户名/邮箱" name="email" required="required"></div>
+					<div class="two02"><input id="usname" class="f-text" type="text" value="" placeholder="手机号/用户名/邮箱" name="usname" required="required"></div>
 				</div>       
 				<div class="two">
 					<div class="two01"><img src="../images/password.png"></div>
-					<div class="two02"><input id="login-password" class="f-text" type="password" placeholder="密码" name="password" required="required"></div>
+					<div class="two02"><input id="uspwd" class="f-text" type="password" placeholder="密码" name="uspwd" required="required"></div>
 				</div>
                 
                 <div id="three">
@@ -43,6 +45,7 @@
 					<a href="">免费注册</a>
                 </p>
             </form>
+             <div class="error">${errorMsg }</div>
         </div>
     </div>
 
@@ -60,7 +63,7 @@
         </div>
         <div id="footer02">
         	<p>
-            	 ©
+            	 &copy;
 				<span>2016</span>
 				<a href="#">美团网团购</a>
 				meituan.com

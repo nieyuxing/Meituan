@@ -7,5 +7,7 @@ import com.yc.meituan.entity.User;
 public interface UserService {
 
 	List<User> listAll();
+	
+	User login(User user);
 
 }

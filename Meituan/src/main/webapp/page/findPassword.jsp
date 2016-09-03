@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html >
 <html>
 <head>
 <meta charset="utf-8">
@@ -8,14 +10,13 @@
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
 </head>
 
-
 <body>
     <div id="findmima">
         <div id="findmima_logo">
            <div id="findmima_logo_content">
                 <img src="../images/meituan2.png" />
                 <div id="findmima_logo_right">
-                   <p>已有美团账号?<a href="login.html">登录</a></p>
+                   <p>已有美团账号?<a href="login.jsp">登录</a></p>
                 </div>
             </div>
         </div>
@@ -106,7 +107,7 @@
                   <label><img src="../images/yes.png"/></label><h3>您的登录密码已重新设置请妥善保管</h3>
                 </div>
                 <div class="second">
-                   <a class="login" href="login.html">立即登录</a>
+                   <a class="login" href="login.jsp">立即登录</a>
                 </div>
              </div>
            </div>
@@ -122,3 +123,4 @@
  
 </body>
 </html>
+

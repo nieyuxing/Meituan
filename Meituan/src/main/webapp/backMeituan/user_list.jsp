@@ -150,8 +150,9 @@
 	</div>
 	<!--添加用户图层-->
 	<div class="add_menber" id="add_menber_style" style="display: none">
-
+		<form>
 		<ul class=" page-content">
+		
 			<li><label class="label_name">用&nbsp;&nbsp;户 &nbsp;名：</label><span
 				class="add_name"><input value="" name="用户名" type="text"
 					class="text_add" /></span>
@@ -179,6 +180,7 @@
 				<div class="prompt r_f"></div></li>
 			
 		</ul>
+		</form>
 	</div>
 </body>
 <script>
@@ -244,7 +246,6 @@
 				$(".add_menber input[type$='text']").each(
 						function(n) {
 							if ($(this).val() == "") {
-
 								layer.alert(str += "" + $(this).attr("name")
 										+ "不能为空！\r\n", {
 									title : '提示框',
@@ -257,7 +258,10 @@
 				if (num > 0) {
 					return false;
 				} else {
-					layer.alert('添加成功！', {
+					$.post("user/edit",function(data){
+						alert(data);
+					});
+					layer.alert('修改成功！', {
 						title : '提示框',
 						icon : 1,
 					});

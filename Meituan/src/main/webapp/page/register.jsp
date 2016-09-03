@@ -1,4 +1,6 @@
-<!doctype html>
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html >
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,16 +13,16 @@
 <body>
 	<div id="reg_logo">
 		<div id="top">
-			<a href="../index.html"><img src="../images/meituan2.png"
+			<a href="../index.jsp"><img src="../images/meituan2.png"
 				class="img" /></a>
 			<div id="reg_logo_right">
-				已有美团账号? <a href="login.html">登录</a>
+				已有美团账号? <a href="login.jsp">登录</a>
 			</div>
 		</div>
 	</div>
 	<div id="reg_body">
 	   <div id="formcontent">
-		<form action="" id="form">
+		<form action="user/register" method="post" id="form" >
 			<ul>
 				<div>
 					<label>邮箱号</label>
@@ -33,7 +35,7 @@
 				</div>
 				<div id="anquan">
 					<label></label>
-					<li><span>弱</span> <span>中</span> <span>强</span></li>
+					<li><span>弱</span> <span>中</span><span>强</span></li>
 				</div>
 				<div>
 					<label>确认密码</label>
@@ -45,7 +47,7 @@
 				<br>
 			</div>
 			<div>
-				<label></label><a href="about.html"><span style="color: #4FC3B7">
+				<label></label><a href="about.jsp"><span style="color: #4FC3B7">
 						<<美团网用户协议>> <span></a>
 			</div>
 		</form>
@@ -56,6 +58,7 @@
 			<p>
 				<a href="#">&copy;meituan.com</a> <a href="#">京ICP证070791号</a><span>京公网安备11010502025545号</span>
 			</p>
-			<div></div>
+		</div>
+	</div>
 </body>
 </html>

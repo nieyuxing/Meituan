@@ -20,4 +20,7 @@ public class UserServiceImpl implements UserService{
 	public List<User> listAll() {
 		return userMapper.listAll();
 	}
+	public User login(User user) {
+		return userMapper.login(user);
+	}
 }

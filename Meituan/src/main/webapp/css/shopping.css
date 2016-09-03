@@ -4,13 +4,15 @@
 * {
 	padding: 0px;
 	margin: 0 auto;
-	font-family:"微软雅黑"
 }
 ul li {
 	list-style: none;
 }
 a {
 	text-decoration: none;
+}
+a:hover{
+	color:#2BB7AA;
 }
 #body-header {
 	width: 100%;
@@ -20,6 +22,7 @@ a {
 	width: 100%;
 	height: 29px;
 	background-color: #F9F9F9;
+	border-bottom:1px solid #CCC;
 }
 #body-header #body-header-box01 .h_top {
 	width: 72%;
@@ -100,7 +103,7 @@ a:hover {
 	font-family:"Hiragino Sans GB",​" Mic...o Hei",​arial,​sans-serif;
 }
 #body-content #body-content-on{
-	width:100%;
+	width:72%;
 }
 #body-content #body-content-on #on-one{
 	width:100%;
@@ -112,38 +115,40 @@ a:hover {
 	font-size:24px;
 	line-height:26px;
 }
+
+
 #body-content #body-content-on #on-two{
 	width:100%;
 	margin-bottom:10px;
 }
-#body-content #body-content-on #on-two #shopping{
+#shopping-table{
 	width:100%;
 	border:1px solid #EEE;
 	font-size:12px;
 	line-height:18px;
 	text-align:center;
 }
-#body-content #body-content-on #on-two table{
+table{
 	width:100%;
 	font-size:12px;
 	line-height:18px;
 	text-align:center;
 }
 
-#body-content #body-content-on #on-two .list-up{
+.list-up{
 	width:100%;
 	height:34px;
 	background-color:#F7F7F7;	
 }
-#body-content #body-content-on #on-two .list-content01{
+.list-content01{
 	width:100%;
 	height:84px;
 }
-#body-content #body-content-on #on-two .desc{
+.desc{
 	text-align:left;
 	padding-left:10px;
 }
-#body-content #body-content-on #on-two .cart-quantity{
+.cart-quantity{
 	width:98px;
 	height:34px;
 	border:1px solid #EEE;
@@ -318,7 +323,7 @@ a:hover {
 }
 #body-footer #footer-box01 #body-footer-box .box11 ul li a {
 	color: #999;
-	line-height: 21.6px;
+	line-height:21.6px;
 }
 #body-footer #footer-box01 #body-footer-box #box12 {
 	width: 250px;
@@ -345,5 +350,5 @@ a:hover {
 #body-footer #footer-box02 {
 	height: 218px;
 	border-top: 1px solid #999;
-	background-image: url(../images/footer111.jpg);
+	background-image: url(images/footer111.jpg);
 }

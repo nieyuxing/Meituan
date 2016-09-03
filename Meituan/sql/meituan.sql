@@ -1,3 +1,4 @@
+drop table admins;
 drop table Type;
 drop table users;
 drop table goods;
@@ -46,7 +47,7 @@ create table store(
 create table type(
        tid int primary key,   --类型id
        tname varchar2(20),    --类型名
-       tfid int(20)      --父类型id
+       tfid int      --父类型id
 );
 
 
@@ -90,6 +91,7 @@ create table evaluate(
        state int  ,              --评价分数1-5
        epics varchar2(100)		--评价图片
 );
+drop sequence seq_users_usid;
 create sequence seq_users_usid start with 1001 ;
 create sequence seq_store_sid start with 10001 ;
 create sequence seq_type_tid start with 101 ;
@@ -99,6 +101,7 @@ create sequence seq_evaluate_eid start with 30001 ;
 
 alter table users add unique(telnum);
 alter table users add unique(email);
+
 insert into users values(seq_users_usid.nextval,'张三','a','15931619481','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'张四','a','15931619482','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'张五','a','15931619483','',null,null,'','');
@@ -128,20 +131,20 @@ insert into type values(seq_type_tid.nextval,'港菜',110);
 insert into type values(seq_type_tid.nextval,'新林宾馆',111);
 
 
-insert into goods values(seq_goods_gid.nextval,'正新鸡扒','9.00',10001,'null','null','110',0,'');
-insert into goods values(seq_goods_gid.nextval,'佳客来牛排','9.00',10001,'null','null','110',0,'');
-insert into goods values(seq_goods_gid.nextval,'门客牛排','9.00',10001,'null','null','110',0,'');
-insert into goods values(seq_goods_gid.nextval,'健康牛排','9.00',10001,'null','null','110',0,'');
-insert into goods values(seq_goods_gid.nextval,'至尊披萨','9.00',10001,'null','null','110',0,'');
+insert into goods values(seq_goods_gid.nextval,'正新鸡扒','9.00',10001,'null','null',110,0,'');
+insert into goods values(seq_goods_gid.nextval,'佳客来牛排','9.00',10001,'null','null',110,0,'');
+insert into goods values(seq_goods_gid.nextval,'门客牛排','9.00',10001,'null','null',110,0,'');
+insert into goods values(seq_goods_gid.nextval,'健康牛排','9.00',10001,'null','null',110,0,'');
+insert into goods values(seq_goods_gid.nextval,'至尊披萨','9.00',10001,'null','null',110,0,'');
 
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
 insert into store values(seq_store_sid.nextval,'1001','中国食府自助烤肉','单人午餐自助烤肉，提供免费WiFi');
-select t.*,(
-select tname from type where tid in (select tfid from type)
-) from type t;
 
-select * from type
 select a.*,b.tname ftname from type a,type b where a.tfid=b.tid
+
+
+
+commit
