@@ -6,6 +6,7 @@
 		margin:0 auto;
 		font-family:"微软雅黑"
 	}
+	.error { color:#f00; text-align:left; clear:both;font-size:14px;margin-top:5px}
 	ul li{
 		list-style:none;
 	}

@@ -4,14 +4,14 @@ public class User {
 	private int usid;
 	private String usname;
 	private String uspwd;
-	private int telnum;
+	private String telnum;
 	private String email;
 	private double purse;
-	private int idcard;
+	private String idcard;
 	
 	public User() {
 	}
-	public User(int usid, String usname, String uspwd, int telnum, String email, int purse, int idcard) {
+	public User(int usid, String usname, String uspwd, String telnum, String email, int purse, String idcard) {
 			this.usid = usid;
 			this.usname = usname;
 			this.uspwd = uspwd;
@@ -38,10 +38,10 @@ public class User {
 	public void setUspwd(String uspwd) {
 		this.uspwd = uspwd;
 	}
-	public int getTelnum() {
+	public String getTelnum() {
 		return telnum;
 	}
-	public void setTelnum(int telnum) {
+	public void setTelnum(String telnum) {
 		this.telnum = telnum;
 	}
 	public String getEmail() {
@@ -56,10 +56,10 @@ public class User {
 	public void setPurse(double purse) {
 		this.purse = purse;
 	}
-	public int getIdcard() {
+	public String getIdcard() {
 		return idcard;
 	}
-	public void setIdcard(int idcard) {
+	public void setIdcard(String idcard) {
 		this.idcard = idcard;
 	}
 	@Override

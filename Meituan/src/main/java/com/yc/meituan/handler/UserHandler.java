@@ -2,7 +2,6 @@ package com.yc.meituan.handler;
 
 import java.io.PrintWriter;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,6 +32,7 @@ public class UserHandler {
 	    
 		return 1;
    }
+    //用户登录
 	@RequestMapping(value="/login",method=RequestMethod.POST)
     public String userLogin(User user,ModelMap map){
 	    user= userService.login(user);
@@ -57,4 +57,15 @@ public class UserHandler {
 		out.flush();
 		out.close();
  	}
+ 	//用户注册
+  @RequestMapping(value="/register",method=RequestMethod.POST)
+  public String userRegister(User user,ModelMap map){
+  	user=userService.userRegister(user);
+  	System.out.println(user);
+	  if(user==null){
+		  map.put("errorMsg","注册失败!!!");
+		  return "../page/register";
+	  }
+	  return "../page/login";
+    }
 }

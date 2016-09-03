@@ -12,7 +12,7 @@ import com.yc.meituan.mapper.UserMapper;
 import com.yc.meituan.service.TypeService;
 import com.yc.meituan.service.UserService;
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserMapper userMapper;
@@ -22,5 +22,8 @@ public class UserServiceImpl implements UserService{
 	}
 	public User login(User user) {
 		return userMapper.login(user);
+	}
+	public User userRegister(User user) {
+		return userMapper.register(user);
 	}
 }

@@ -4,10 +4,13 @@ public class Admin {
 	private int aid;
 	private String aname;
 	private String pwd;
-	
-	
 	public Admin() {
+		super();
 	}
+	public  Admin(String aname,String pwd){
+    	this.aname=aname;
+    	this.pwd=pwd;
+    }
 	public int getAid() {
 		return aid;
 	}
