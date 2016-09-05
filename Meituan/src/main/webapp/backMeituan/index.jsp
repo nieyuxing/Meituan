@@ -35,7 +35,6 @@
  var cid = $('#nav_list> li>.submenu');
 	  cid.each(function(i){ 
        $(this).attr('id',"Sort_link_"+i);
-   
     })  
  })
  jQuery(document).ready(function(){ 	
@@ -78,7 +77,6 @@
     
 		
 });
- 
 //jQuery( document).ready(function(){
 //	  $("#submit").click(function(){
 //	// var num=0;
@@ -97,7 +95,7 @@
 //     });    
 //})		
 //	});
-/*********************点击事件*********************/
+
 $( document).ready(function(){
   $('#nav_list').find('li.home').click(function(){
 	$('#nav_list').find('li.home').removeClass('active');
@@ -308,18 +306,11 @@ $('.change_Password').on('click', function(){
 						 <li class="home"><a href="javascript:void(0)" name="backMeituan/Category_Manage.html" title="分类管理"  class="iframeurl"><i class="icon-double-angle-right"></i>分类管理</a></li>
 						</ul>
 					</li>
-					<li>
 					
-					<a href="#" class="dropdown-toggle"><i class="icon-list"></i><span class="menu-text"> 交易管理 </span><b class="arrow icon-angle-down"></b></a>
-                    <ul class="submenu">
-                    <li class="home"><a href="javascript:void(0)" name="backMeituan/transaction.html" title="交易信息"  class="iframeurl"><i class="icon-double-angle-right"></i>交易信息</a></li>
-                    
-                   </ul>
-				  </li>
                   <li>
 					<a href="#" class="dropdown-toggle"><i class="icon-user"></i><span class="menu-text"> 会员管理 </span><b class="arrow icon-angle-down"></b></a>
                     <ul class="submenu">
-                    <li class="home"><a href="javascript:void(0)" name="backMeituan/user_list.html" title="会员列表"  class="iframeurl"><i class="icon-double-angle-right"></i>会员列表</a></li>
+                    <li class="home"><a href="javascript:void(0)" name="backMeituan/user_list.jsp" title="会员列表"  class="iframeurl"><i class="icon-double-angle-right"></i>会员列表</a></li>
                     <li class="home"><a href="javascript:void(0)" name="backMeituan/integration.html" title="会员记录管理"  class="iframeurl"><i class="icon-double-angle-right"></i>会员记录管理</a></li>
                    </ul>
 				  </li>
@@ -421,11 +412,7 @@ $('.change_Password').on('click', function(){
              <li><label class="label_name">确认密码</label><input name="再次确认密码" type="password" class="" id="c_mew_pas"></li>
               
             </ul>
-     <!--       <div class="center"> <button class="btn btn-primary" type="button" id="submit">确认修改</button></div>-->
          </div>
-        <!-- /.main-container -->
-		<!-- basic scripts -->
-		
 </body>
 </html>
 

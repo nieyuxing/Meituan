@@ -4,8 +4,7 @@ public class Admin {
 	private int aid;
 	private String aname;
 	private String pwd;
-
-    public Admin() {
+	public Admin() {
 		super();
 	}
 	public  Admin(String aname,String pwd){

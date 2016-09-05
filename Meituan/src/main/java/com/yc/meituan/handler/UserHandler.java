@@ -3,6 +3,8 @@ package com.yc.meituan.handler;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import java.io.PrintWriter;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.google.gson.Gson;
 import com.yc.meituan.entity.User;
 import com.yc.meituan.service.UserService;
 
@@ -21,6 +24,16 @@ public class UserHandler {
   
 	@Autowired
 	private UserService userService;
+  @RequestMapping(value = "/data")
+	public void listAll(PrintWriter out) {
+		System.out.println("到达listAll方法...");
+		List<User> users = userService.listAll();
+		Gson gson=new Gson();
+		out.println(gson.toJson(users));
+		out.flush();
+		out.close();
+	}
+  
   //用户登录
   @RequestMapping(value="/login",method=RequestMethod.POST)
     public String userLogin(User user,ModelMap map){

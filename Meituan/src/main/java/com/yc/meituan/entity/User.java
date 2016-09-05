@@ -20,7 +20,7 @@ public class User {
 			this.purse = purse;
 			this.idcard = idcard;
 		}
-		//
+		
 		public User(String uspwd,String email) {
 			this.uspwd = uspwd;
 			this.email = email;

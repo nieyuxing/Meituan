@@ -1,4 +1,7 @@
 $(function(){
+	$.get("goods/listAll",function(data){
+		alert(data);
+	},"json");
 	menuA();
 });
 
@@ -12,7 +15,7 @@ function menuA(){
 			var listStr="";
 			for(var i=0;i<data.length;i++){
 				if(data[i].ftname==str){
-					listStr += '<li class="typess"><a href="goods/type">'+data[i].tname+'</a></li>';
+					listStr += '<li class="typess"><a href="goods/type?tname=data[i].tname">'+data[i].tname+'</a></li>';
 				}
 			}
 			$("#types").html(listStr);
@@ -33,6 +36,15 @@ function menuA(){
 	$('#b_body_center').mouseover(function(){
 		$('#b_body_center').show();
 		flag=true;
+	});
+	
+	var dv = $('#nowLook'), st;
+	dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
+	$(window).scroll(function () {
+	st = Math.max(document.body.scrollTop || document.documentElement.scrollTop);
+	if (st > parseInt(dv.attr('otop'))) {
+	if (dv.css('position') != 'fixed') dv.css({ 'position': 'fixed', top: 0});
+	} else if (dv.css('position') != 'static') dv.css({ 'position': 'static' });
 	});
 }
 $(function() {
