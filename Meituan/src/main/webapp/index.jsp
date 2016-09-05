@@ -134,7 +134,7 @@
 </div>
 <div id="content">
     	<div id="content-left">
-			<div id="box1">
+			<div id="nowLook">
 				<ul>
 					<li id="a1"><img src='images/left01.png' /></li>
 					<li id="a2"><img src='images/left02.png' /></li>
