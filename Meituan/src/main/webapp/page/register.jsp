@@ -26,12 +26,12 @@
 			<ul>
 				<div>
 					<label>邮箱号</label>
-					<li><input type="text" name="mail" />
+					<li><input type="text" name="email" />
 					<p>注册成功后，全美团可用</p></li>
 				</div>
 				<div>
 					<label>创建密码</label>
-					<li><input type="password" name="password" /></li>
+					<li><input type="password" name="uspwd" /></li>
 				</div>
 				<div id="anquan">
 					<label></label>
@@ -39,7 +39,7 @@
 				</div>
 				<div>
 					<label>确认密码</label>
-					<li><input type="password" name="passwordQuest" /></li>
+					<li><input type="password" name="uspwd2" /></li>
 				</div>
 			</ul>
 			<div>
@@ -51,6 +51,7 @@
 						<<美团网用户协议>> <span></a>
 			</div>
 		</form>
+		<div class="erroe">${errorMsg }</div>
 		</div>
 	</div>
 	<div id="reg_footer">

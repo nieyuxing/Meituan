@@ -1,4 +1,7 @@
 $(function(){
+	$.get("goods/listAll",function(data){
+		alert(data);
+	},"json");
 	menuA();
 });
 
@@ -12,7 +15,7 @@ function menuA(){
 			var listStr="";
 			for(var i=0;i<data.length;i++){
 				if(data[i].ftname==str){
-					listStr += '<li class="typess"><a href="goods/type">'+data[i].tname+'</a></li>';
+					listStr += '<li class="typess"><a href="goods/type?tname=data[i].tname">'+data[i].tname+'</a></li>';
 				}
 			}
 			$("#types").html(listStr);
