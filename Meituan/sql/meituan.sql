@@ -20,22 +20,31 @@ select * from store;
 create table admins(
        aid int primary key,
        aname varchar2(20) not null,
-       pwd varchar2(20 ) not null 
+       pwd varchar2(45 ) not null 
 );
 insert into admins values(111,'admin','a');
 --�û���
 create table users(       
   usid int primary key,   
   usname varchar2(20) not null, 
-  uspwd varchar2(20) not null,  
-  telnum varchar2(20) ,  --�绰
-  email varchar2(30),    --����
+  uspwd varchar2(45) not null,  
+  telnum varchar2(45) ,  --�绰
+  email varchar2(45),    --����
   purse number(10,2),             --Ǯ�����
   idcard int,            --���֤����
   text1 varchar2(200),   --�û�ͼƬ
   text2 varchar2(200)    --Ԥ���ֶ�
 );
 
+ --删除字段：
+  alter table users drop column uspwd
+  alter table users drop column telnum
+  alter table users drop column email
+  
+--添加字段 
+  alter table users add uspwd varchar2(45)
+  alter table users add telnum varchar2(45)
+  alter table users add email varchar2(50)
 --�̵��
 create table store(
 	sid int primary key,
@@ -103,7 +112,6 @@ create sequence seq_evaluate_eid start with 30001 ;
 alter table users add unique(telnum);
 alter table users add unique(email);
 
-<<<<<<< HEAD
 insert into users values(seq_users_usid.nextval,'张三','a','15931619481','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'张四','a','15931619482','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'张五','a','15931619483','',null,null,'','');
@@ -114,7 +122,7 @@ insert into users values(seq_users_usid.nextval,'张九','a','15931619487','',nu
 insert into users values(seq_users_usid.nextval,'王五','a','15931619234','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'nice','a','15931619254','13218qq.com',null,null,'','');
 
-insert into users values(seq_users_usid.nextval,seq_users_usid.nextval,'a','15931619200','222@163.com',null,null,'','')
+insert into users values(seq_users_usid.nextval,'匿名','a',null,'1231@163.com',null,null,'','')
 
 =======
 insert into users values(seq_users_usid.nextval,'����','a','15931619481','',null,null,'','');
@@ -125,7 +133,6 @@ insert into users values(seq_users_usid.nextval,'����','a','15931619475'
 insert into users values(seq_users_usid.nextval,'�Ű�','a','15931619486','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'�ž�','a','15931619487','',null,null,'','');
 insert into users values(seq_users_usid.nextval,'����','a','15931619234','',null,null,'','');
->>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 insert into type values(seq_type_tid.nextval,'��ʳ',0);
 insert into type values(seq_type_tid.nextval,'�Ƶ�/��ջ',0);
@@ -159,7 +166,6 @@ insert into goods values(seq_goods_gid.nextval,'�ѿ���ţ��','9.00',1
 insert into goods values(seq_goods_gid.nextval,'�ſ�ţ��','9.00',10001,'null','null',110,0,'');
 insert into goods values(seq_goods_gid.nextval,'����ţ��','9.00',10001,'null','null',110,0,'');
 insert into goods values(seq_goods_gid.nextval,'��������','9.00',10001,'null','null',110,0,'');
->>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 insert into store values(seq_store_sid.nextval,'1001','�й�ʳ��������','������������⣬�ṩ���WiFi');
 insert into store values(seq_store_sid.nextval,'1001','�й�ʳ��������','������������⣬�ṩ���WiFi');
@@ -170,5 +176,6 @@ insert into store values(seq_store_sid.nextval,'1001','�й�ʳ�����
 select a.*,b.tname ftname from type a,type b where a.tfid=b.tid
 
 select * from users where usname='张三' and uspwd ='a'
+select * from users where email=''
 
 commit

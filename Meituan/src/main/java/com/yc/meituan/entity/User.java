@@ -20,7 +20,7 @@ public class User {
 			this.purse = purse;
 			this.idcard = idcard;
 		}
-		//用户注册测试
+		//
 		public User(String uspwd,String email) {
 			this.uspwd = uspwd;
 			this.email = email;
@@ -73,5 +73,6 @@ public class User {
 			return "User [usid=" + usid + ", usname=" + usname + ", uspwd=" + uspwd + ", telnum=" + telnum + ", email="
 					+ email + ", purse=" + purse + ", idcard=" + idcard + "]";
 		}
+		
 		
 }

@@ -20,14 +20,14 @@ public class UserServiceImplTest {
 	
 	@Test
 	public void testLogin(){
-		User user=userService.login(new User("13218qq.com","a"));
+		User user=userService.login(new User("nice","a"));
 		System.out.println(user);
 		assertNotNull(user);
 	}
 	
 	@Test
-	public void testRegister(){
-		User user=userService.userRegister(new User("a","16465645645@163.com"));
+	public void testUserRegister(){
+		boolean user=userService.register(new User("a","1215@126.com"));
 		System.out.println(user);
 		assertNotNull(user);
 	}

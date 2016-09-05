@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.yc.meituan.entity.User;
 import com.yc.meituan.mapper.UserMapper;
-import com.yc.meituan.mapper.UserMapper;
 import com.yc.meituan.service.UserService;
+import com.yc.meituan.entity.Encrypt;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -19,8 +19,16 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public User userRegister(User user) {
-		return userMapper.register(user);
+	public boolean register(User user) {
+		//密码加密
+		user.setUspwd(Encrypt.md5AndSha(user.getUspwd()));
+		try {
+			return userMapper.insertUser(user)>0;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
+	
 
 }

@@ -7,7 +7,7 @@
       select * from users where (usname=#{usname} or email=#{usname} or telnum=#{usname}) and uspwd=#{uspwd}
 	</select>
 	
-	<insert id="register" parameterType="User"> 
-	     insert into users values(seq_users_usid.nextval,seq_users_usid.nextval,#{uspwd},null,#{email},null,null,'','')
+	<insert id="insertUser" parameterType="User"> 
+	     insert into users values(seq_users_usid.nextval,'匿名',#{uspwd},null,#{email},null,null,'','')
 	</insert>
 </mapper>
