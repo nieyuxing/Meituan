@@ -52,11 +52,11 @@ create table type(
 --商品表
 create table goods(
        gid int primary key,
-       gname varchar2(50),    --商品名
-       gprice number(8,2),            --商品价格
+      gname varchar2(50) unique not null,    --商品名
+       gprice number(8,2) not null,            --商品价格
        sid int references store(sid),    --商品地址，相当于店铺名
        gpic varchar2(50),             --商品图片
-       gdetails varchar2(50),         --商品详细
+       gdetails varchar2(20),         --商品详细
        tid int references type(tid),  --类型id
        gcount int,            --商品已卖数量
        ecount int     --评价数量

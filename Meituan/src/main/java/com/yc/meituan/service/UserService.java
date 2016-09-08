@@ -10,6 +10,10 @@ public interface UserService {
 	
 	User login(User user);
 
-	User userRegister(User user);
+	boolean register(User user);
+
+	boolean emailverify(String email);
+
+	boolean usnameOremailverify(String usnameOremail);
 
 }

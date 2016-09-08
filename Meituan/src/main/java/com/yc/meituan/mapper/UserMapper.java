@@ -5,10 +5,15 @@ import java.util.List;
 import com.yc.meituan.entity.User;
 
 public interface UserMapper {
-	List<User> listAll();
-	
+    
+    List<User> listAll();
+    
 	User login(User user);
+
+	int insertUser(User user);
+
+	User emailverify(String email);
 	
-	User register(User user);
-	
+	User usnameOremailverify(String usnameOremail);
+
 }

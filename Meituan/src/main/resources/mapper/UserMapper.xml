@@ -11,7 +11,16 @@
       select * from users where (usname=#{usname} or email=#{usname} or telnum=#{usname}) and uspwd=#{uspwd}
 	</select>
 	
-	<insert id="register" parameterType="User"> 
-	     insert into users values(seq_users_usid.nextval,seq_users_usid.nextval,#{uspwd},null,#{email},null,null,'','')
+	<insert id="insertUser" parameterType="User"> 
+	     insert into users values(seq_users_usid.nextval,null,#{uspwd},null,#{email},null,null,'','')
 	</insert>
+	
+	<select id="emailverify"  parameterType="String" resultType="User">
+		select * from users where email=#{email}
+	</select> 
+	
+	<select id="usnameOremailverify"  parameterType="String" resultType="User">
+		select * from users where email=#{usnameOremail} or usname=#{usnameOremail}
+	</select> 
+	
 </mapper>

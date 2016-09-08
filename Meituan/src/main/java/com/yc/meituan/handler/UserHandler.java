@@ -2,7 +2,14 @@ package com.yc.meituan.handler;
 
 import java.io.PrintWriter;
 import java.util.List;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +22,10 @@ import com.yc.meituan.service.UserService;
 @Controller
 @RequestMapping("/user")
 public class UserHandler {
+  
 	@Autowired
 	private UserService userService;
-
-	@RequestMapping(value = "/data")
+    @RequestMapping(value = "/data")
 	public void listAll(PrintWriter out) {
 		System.out.println("到达listAll方法...");
 		List<User> users = userService.listAll();
@@ -27,45 +34,73 @@ public class UserHandler {
 		out.flush();
 		out.close();
 	}
-//	@RequestMapping(value="/register",method=RequestMethod.POST)
-//    public int userRegister(String email,String uspwd,String passwordQuest){
-//	    
-//		return 1;
-//   }
-    //用户登录
-	@RequestMapping(value="/login",method=RequestMethod.POST)
+  //用户登录
+  @RequestMapping(value="/login",method=RequestMethod.POST)
     public String userLogin(User user,ModelMap map){
 	    user= userService.login(user);
-	    System.out.println(user);
+	    System.out.println("user login.."+user);
 	    if(user==null){
 	    	map.put("errorMsg", "账号或密码错误!!!");
 	    	return "../page/login";
 	    }
 		return "../index";
- 	}
-	
-	@RequestMapping(value="/edit",method=RequestMethod.POST)
-    public void Edit(PrintWriter out){
-	    //user= userService.edit(user);
-	    /*System.out.println(user);
-	    if(user==null){
-	    	map.put("errorMsg", "账号或密码错误!!!");
-	    	return "../page/login";
-	    }*/
-		System.out.println("到达edit方法...");
-		out.println(true);
+  }
+  
+   //用户注册
+    @RequestMapping(value="/register",method=RequestMethod.POST)
+	public String register(User user, ModelMap map,HttpServletRequest request) {
+		if (userService.register(user)) {
+			// 成功注册
+			//接收激活用户的链接地址
+			activeAccountMail("美团注册","您已成功注册美团,请记住您的登录邮箱及其密码...",
+					"15886486481@163.com",user.getEmail());
+			return "../page/login";
+		}
+		return "../page/register";
+	}
+    
+     //判断邮箱是否被注册
+    @RequestMapping(value="/emailverify",method=RequestMethod.POST)
+	public void emailverify( String email,PrintWriter out){
+		System.out.println("==>"+email);
+		if(userService.emailverify(email)){
+			out.print(true);
+		}else{
+			out.print(false);
+		}
 		out.flush();
 		out.close();
- 	}
- 	//用户注册
-  @RequestMapping(value="/register",method=RequestMethod.POST)
-  public String userRegister(User user,ModelMap map){
-  	user=userService.userRegister(user);
-  	System.out.println(user);
-	  if(user==null){
-		  map.put("errorMsg","注册失败!!!");
-		  return "../page/register";
-	  }
-	  return "../page/login";
-    }
+	}
+	
+    //判断用户名或者邮箱是否存在
+    @RequestMapping(value="/usnameOremailverify",method=RequestMethod.POST)
+	public void usnameOremailverify( String usnameOremail,PrintWriter out){
+		System.out.println("==>"+usnameOremail);
+		if(userService.usnameOremailverify(usnameOremail)){
+			out.print(true);
+		}else{
+			out.print(false);
+		}
+		out.flush();
+		out.close();
+	}
+   
+    
+	@Autowired
+	private JavaMailSender mailSender;
+	private void activeAccountMail(String subject,String content,String form, String to) {
+		MimeMessage mm=mailSender.createMimeMessage();
+		try {
+			MimeMessageHelper mmh=new MimeMessageHelper(mm,true);
+			mmh.setTo(to);//设置邮件接受者
+			mmh.setFrom(form); //设置邮件发送者
+			mmh.setSubject(subject);//设置主题
+			mmh.setText(content);//设置内容
+			mailSender.send(mm);//发送邮件
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 }

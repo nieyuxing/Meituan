@@ -26,7 +26,7 @@
             	<div id="none"></div>
                 <span>
                 	账号登录
-                    <a href="">手机动态码登录<img src="images/login04.png"></a>
+                   <!--  <a href="">手机动态码登录<img src="images/login04.png"></a> -->
                 </span>
                 
                 <div class="two">
@@ -39,7 +39,7 @@
 				</div>
                 
                 <div id="three">
-                	<a href="findPassword.jsp">忘记密码？</a>
+                	<a href="page/findPassword.jsp">忘记密码？</a>
                     <input id="check" type="checkbox" onclick="save()"/>7天内自动登录
                 </div>
                 <div id="four">
@@ -47,7 +47,7 @@
                 </div>
                 <p>
                 	还没有账号？
-					<a href="">免费注册</a>
+					<a href="page/register.jsp">免费注册</a>
                 </p>
             </form>
              <div class="error">${errorMsg }</div>
