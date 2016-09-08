@@ -27,11 +27,11 @@ public class UserHandler {
 		out.flush();
 		out.close();
 	}
-	@RequestMapping(value="/register",method=RequestMethod.POST)
-    public int userRegister(String email,String uspwd,String passwordQuest){
-	    
-		return 1;
-   }
+//	@RequestMapping(value="/register",method=RequestMethod.POST)
+//    public int userRegister(String email,String uspwd,String passwordQuest){
+//	    
+//		return 1;
+//   }
     //用户登录
 	@RequestMapping(value="/login",method=RequestMethod.POST)
     public String userLogin(User user,ModelMap map){

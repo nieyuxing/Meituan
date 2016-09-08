@@ -8,7 +8,7 @@
 <title>美团网</title>
 <link href="css/index.css"  type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="js/index.js"></script>   
+<script type="text/javascript" src="js/index.js"></script> 
 </head>
 <body>
     <div id="all">
@@ -169,15 +169,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6" id="meishi">
-                	<div class="box7"></div>
+                <div class="box6" id="meishiType">                	                	              	               	
+               <!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多美食团购，请点击查看></a>
@@ -202,15 +201,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6">
-                	<div class="box7"></div>
+                <div class="box6" id="xiuxianType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多休闲娱乐团购，请点击查看></a>
@@ -235,15 +234,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6">
-                	<div class="box7"></div>
+                <div class="box6" id="dianyingType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多电影团购，请点击查看></a>
@@ -268,15 +267,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6" >
-                	<div class="box7"></div>
+                <div class="box6" id="jiudianType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多酒店团购，请点击查看></a>
@@ -301,15 +300,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6">
-                	<div class="box7"></div>
+                <div class="box6" id="shenghuoType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多生活服务团购，请点击查看></a>
@@ -334,15 +333,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6">
-                	<div class="box7"></div>
+                <div class="box6" id="gouwuType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多购物团购，请点击查看></a>
@@ -367,15 +366,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6">
-                	<div class="box7"></div>
+                <div class="box6" id="lirenType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多丽人团购，请点击查看></a>
@@ -400,15 +399,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="box6">
-                	<div class="box7"></div>
+                <div class="box6" id="lvyouType">
+                	<!-- <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
                     <div class="box7"></div>
-                    <div class="box7"></div>
+                    <div class="box7"></div> -->
                 </div>
                 <div class="box9">
                 	<a href="page/typeShop.jsp">更多旅游团购，请点击查看></a>

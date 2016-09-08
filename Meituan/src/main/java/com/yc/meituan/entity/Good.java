@@ -7,13 +7,17 @@ public class Good {
 	private String gpic;
 	private String gdetails;
 	private String sname;
-	
+	private String sdetail;
+	private int gcount;
+	private int ecount;
+	private int tid;
+		
 	public Good() {
 		super();
 	}
 
-	public Good(int gid, String gname, double gprice, String gpic,
-			String gdetails, String sname) {
+	public Good(int gid, String gname, double gprice, String gpic, String gdetails, String sname, String sdetail,
+			int gcount, int ecount) {
 		super();
 		this.gid = gid;
 		this.gname = gname;
@@ -21,6 +25,33 @@ public class Good {
 		this.gpic = gpic;
 		this.gdetails = gdetails;
 		this.sname = sname;
+		this.sdetail = sdetail;
+		this.gcount = gcount;
+		this.ecount = ecount;
+	}
+
+	public String getsdetail() {
+		return sdetail;
+	}
+
+	public void setsdetail(String sdetail) {
+		this.sdetail = sdetail;
+	}
+
+	public int getGcount() {
+		return gcount;
+	}
+
+	public void setGcount(int gcount) {
+		this.gcount = gcount;
+	}
+
+	public int getEcount() {
+		return ecount;
+	}
+
+	public void setEcount(int ecount) {
+		this.ecount = ecount;
 	}
 
 	public int getGid() {
@@ -71,10 +102,19 @@ public class Good {
 		this.sname = sname;
 	}
 
+	public int getTid() {
+		return tid;
+	}
+
+	public void setTid(int tid) {
+		this.tid = tid;
+	}
+
 	@Override
 	public String toString() {
-		return "Good [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice
-				+ ", gpic=" + gpic + ", gdetails=" + gdetails + ", sname="
-				+ sname + "]";
+		return "Good [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice + ", gpic=" + gpic + ", gdetails="
+				+ gdetails + ", sname=" + sname + ", sdetail=" + sdetail + ", gcount=" + gcount + ", ecount=" + ecount
+				+ ", tid=" + tid + "]";
 	}
+
 }

@@ -6,6 +6,7 @@
 	<select id="listAll"  resultType="User">
 		select * from users
 	</select> 
+	
 	<select id="login" parameterType="User" resultType="User">
       select * from users where (usname=#{usname} or email=#{usname} or telnum=#{usname}) and uspwd=#{uspwd}
 	</select>
