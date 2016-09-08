@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.yc.meituan.entity.Encrypt;
 import com.yc.meituan.entity.User;
 import com.yc.meituan.service.UserService;
 
@@ -27,8 +28,16 @@ public class UserServiceImplTest {
 	
 	@Test
 	public void testUserRegister(){
-		boolean user=userService.register(new User("a","1215@126.com"));
+		Encrypt e=new Encrypt();
+		boolean user=userService.register(new User(e.md5AndSha("a"),"45612@126.com"));
 		System.out.println(user);
 		assertNotNull(user);
+	}
+	
+	@Test
+	public void testusnameOremailverify(){
+		boolean usnameOremail=userService.usnameOremailverify("888@qq.com");
+		System.out.println(usnameOremail);
+		assertNotNull(usnameOremail);
 	}
 }

@@ -12,4 +12,8 @@ public interface UserService {
 
 	boolean register(User user);
 
+	boolean emailverify(String email);
+
+	boolean usnameOremailverify(String usnameOremail);
+
 }

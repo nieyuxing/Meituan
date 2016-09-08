@@ -12,4 +12,8 @@ public interface UserMapper {
 
 	int insertUser(User user);
 
+	User emailverify(String email);
+	
+	User usnameOremailverify(String usnameOremail);
+
 }

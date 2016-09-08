@@ -32,7 +32,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 		public static String getRandomString() {
 			StringBuffer buffer = new StringBuffer();
-			for (int i = 0; i < 6; i++) {
+			for (int i = 0; i < 4; i++) {
 				buffer.append(CHARS[random.nextInt(CHARS.length)]);
 			}
 			return buffer.toString();
@@ -65,7 +65,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
 			BufferedImage bi = new BufferedImage(width, height,
 					BufferedImage.TYPE_INT_RGB);
 			Graphics2D g = bi.createGraphics();
-			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 24));
 			g.setColor(color);
 			g.fillRect(0, 0, width, height);
 			g.setColor(reverse);
