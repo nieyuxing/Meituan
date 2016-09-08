@@ -22,11 +22,6 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public User login(User user) {
-		return userMapper.login(user);
-	}
-	
-	@Override
 	public boolean register(User user) {
 		//密码加密
 		user.setUspwd(Encrypt.md5AndSha(user.getUspwd()));
@@ -37,6 +32,30 @@ public class UserServiceImpl implements UserService {
 		}
 		return false;
 	}
+
+	@Override
+	public User login(User user) {
+		user.setUspwd(Encrypt.md5AndSha(user.getUspwd()));
+		return userMapper.login(user);
 	
+	}
+
+	@Override
+	public boolean emailverify(String email) {
+		User user = userMapper.emailverify(email);
+		if(user!=null){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean usnameOremailverify(String usnameOremail) {
+		User user = userMapper.usnameOremailverify(usnameOremail);
+		if(user!=null){
+			return true;
+		}
+		return false;
+	}
 
 }

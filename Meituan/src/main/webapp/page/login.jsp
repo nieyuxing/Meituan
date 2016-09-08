@@ -26,7 +26,7 @@
             	<div id="none"></div>
                 <span>
                 	账号登录
-                    <a href="">手机动态码登录<img src="images/login04.png"></a>
+                   <!--  <a href="">手机动态码登录<img src="images/login04.png"></a> -->
                 </span>
                 
                 <div class="two">

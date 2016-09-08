@@ -6,11 +6,21 @@
 	<select id="listAll"  resultType="User">
 		select * from users
 	</select> 
+	
 	<select id="login" parameterType="User" resultType="User">
       select * from users where (usname=#{usname} or email=#{usname} or telnum=#{usname}) and uspwd=#{uspwd}
 	</select>
 	
 	<insert id="insertUser" parameterType="User"> 
-	     insert into users values(seq_users_usid.nextval,'匿名',#{uspwd},null,#{email},null,null,'','')
+	     insert into users values(seq_users_usid.nextval,null,#{uspwd},null,#{email},null,null,'','')
 	</insert>
+	
+	<select id="emailverify"  parameterType="String" resultType="User">
+		select * from users where email=#{email}
+	</select> 
+	
+	<select id="usnameOremailverify"  parameterType="String" resultType="User">
+		select * from users where email=#{usnameOremail} or usname=#{usnameOremail}
+	</select> 
+	
 </mapper>

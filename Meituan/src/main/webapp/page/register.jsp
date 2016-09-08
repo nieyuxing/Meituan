@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <title>注册页面</title>
 <link href="css/register.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <style type="text/css">
 </style>
 </head>
@@ -24,27 +25,26 @@
 	</div>
 	<div id="reg_body">
 	   <div id="formcontent">
-		<form action="user/register" method="post" id="form">
+		<form action="user/register" method="post" onSubmit="return check()" id="form">
 			<ul>
 				<div>
 					<label>邮箱号</label>
-					<li><input path="email" type="text" name="email" />
-					<p>注册成功后，全美团可用</p></li>
-					<f:errors path="email" cssClass="error"/>
+					<li><input path="email" type="text" name="email" class="email" />
+					<p>注册成功后，全美团可用</p><span id="emialP"></span></li>
 				</div>
 				<div>
 					<label>创建密码</label>
-					<li><input path="uspwd" type="password" name="uspwd" /></li>
-					<f:errors path="uspwd" cssClass="error"/>
+					<li><input id="uspwd" path="uspwd" type="password" name="uspwd" placeholder="&nbsp;&nbsp; 密码至少6位数" oninput="OnInput (event)" />
+					<p id="uspwdP"></p></li>
 				</div>
 				<div id="anquan">
 					<label></label>
-					<li><span>弱</span> <span>中</span><span>强</span></li>
+					<li><span id="s1">弱</span> <span id="s2">中</span><span id="s3">强</span></li>
 				</div>
 				<div>
 					<label>确认密码</label>
-					<li><input path="uspwd2" type="password" name="uspwd2" /></li>
-					<f:errors path="uspwd2" cssClass="error"/>
+					<li><input id="uspwd2" path="uspwd2" type="password" name="uspwd2" />
+					<p id="uspwd2P"></p></li>
 				</div>
 			</ul>
 			<div>
@@ -56,7 +56,6 @@
 						<<美团网用户协议>> <span></a>
 			</div>
 		</form>
-		<div class="error">${errorMsg }</div>
 		</div>
 	</div>
 	<div id="reg_footer">
@@ -66,5 +65,7 @@
 			</p>
 		</div>
 	</div>
+	
+   <script type="text/javascript" src="js/register.js"></script>
 </body>
 </html>
