@@ -18,13 +18,13 @@
 			<div class="h_top">
 				<!-- 上-》左-->
 				<ul class="h_top_left">
-					<li><a href="login.html">登录</a>&nbsp; <a
-						href="../page/register.html">注册</a></li>
+					<li><a href="login.jsp">登录</a>&nbsp; <a
+						href="register.jsp">注册</a></li>
 				</ul>
 				<!--上-》右 -->
 				<ul class="h_top_right">
-					<li><a href="">我的订单</a></li>
-					<li><a href="#"><span>我的美团</span></a>
+					<li><a href="MyMeituan.jsp">我的订单</a></li>
+					<li><a href="MyMeituan.jsp"><span>我的美团</span></a>
 						<ul id="h_top_right_mymt">
 							<li class="mymt"><a href="">我的订单</a></li>
 							<li class="mymt"><a href="">我的评价</a></li>
@@ -32,7 +32,7 @@
 							<li class="mymt"><a href="">我的余额</a></li>
 							<li class="mymt"><a href="">账户设置</a></li>
 						</ul></li>
-					<li><a href="#"><span>我的购物车</span></a>
+					<li><a href="shopping.jsp"><span>我的购物车</span></a>
 						<ul id="h_top_right_myshopping">
 							<li class="myshopping"><a href="">商品1</a></li>
 							<li class="myshopping"><a href="">商品2</a></li>
@@ -53,15 +53,12 @@
 						name="text"> <a href="#" id="search"><span>搜索</span></a>
 				</div>
 				<ul class="h_body_hot">
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
-					<li><a href="#">蛋糕</a></li>
+					<li><a href="typeShop.jsp">美食</a></li>
+					<li><a href="typeShop.jsp">酒店/客栈</a></li>
+					<li><a href="typeShop.jsp">KTV</a></li>
+					<li><a href="typeShop.jsp">休闲娱乐</a></li>
+					<li><a href="typeShop.jsp">生活服务</a></li>
+					<li><a href="typeShop.jsp">新品上架</a></li>
 				</ul>
 			</div>
 			<a href=""><img src="../images/login03.png" id="img2" /></a>
@@ -76,10 +73,10 @@
 			</div>
 			<div id="b_head_right">
 				<ul>
-					<li><a href="#">首页</a></li>
-					<li><a href="#">今日新单</a></li>
-					<li><a href="#">购物</a></li>
-					<li><a href="#">名店抢购</a></li>
+					<li><a href="../index.jsp">首页</a></li>
+                	<li><a href="typeShop.jsp">今日新单</a></li>
+                	<li><a href="typeShop.jsp">购物</a></li>
+                	<li><a href="typeShop.jsp">名店抢购</a></li>
 				</ul>
 			</div>
 		</div>
@@ -140,7 +137,7 @@
 												<input type="checkbox" name="cartItem" id="" class=""
 												value="">
 											</td>
-											<td class="desc" width="auto"><a href=""><img
+											<td class="desc" width="auto"><a href="details.jsp"><img
 													src="../images/yangpin.jpg" width="63" height="39"> <span>麦琪：单人下午茶套餐，包间免费，提供免费WiFi</span></a>
 											</td>
 											<td class="saleNum" width="70">1</td>

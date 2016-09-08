@@ -70,7 +70,7 @@
 			</div>
 			<div id="b_head_right">
 				<ul>
-					<li><a href="typeShop.jsp">首页</a></li>
+					<li><a href="../index.jsp">首页</a></li>
                 	<li><a href="typeShop.jsp">今日新单</a></li>
                 	<li><a href="typeShop.jsp">购物</a></li>
                 	<li><a href="typeShop.jsp">名店抢购</a></li>

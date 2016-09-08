@@ -263,12 +263,10 @@ a:hover {
 	height: 6350px;
 	float: left;
 }
-#content #content-left #box1 {
+#content #content-left #nowLook {
 	width: 40px;
-	margin-left: -10px;
-	position: fixed;
-	top: 30px;
-	left: 30px;
+	float:left;
+	margin-left: 20px;
 }
 #content #content-middle {
 	width: 86%;

@@ -5,6 +5,9 @@
 <head>
 <meta charset="utf-8">
 <title>找回密码</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="../css/findPassword.css"  rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
@@ -14,7 +17,7 @@
     <div id="findmima">
         <div id="findmima_logo">
            <div id="findmima_logo_content">
-                <img src="../images/meituan2.png" />
+                <a href="../index.jsp"><img src="../images/meituan2.png" /></a>
                 <div id="findmima_logo_right">
                    <p>已有美团账号?<a href="login.jsp">登录</a></p>
                 </div>
@@ -37,20 +40,23 @@
               <div id="body_bottom_form">
                  <div id="body_bottom_form_center">
                     <div class="formcontent">
-                    <label for="uname">美团账号</label>
-                    <input class="uname" type="text" name="uname" placeholder="用户名/邮箱"/>
-                    </div>
-                    <div class="formcontent">
-                     <label for="yzm">&nbsp;验证码</label>
-                     <input class="yzm" type="text" name="yanzhengma"/>
-                     <div class="picYZM"></div>
-                     <a class="huan" href="#">看不清楚?换一张</a>
-                    </div>
-                    
-                    <div class="formcontent">
-                      <label></label>
-                       <p><a class="next" href="javascript:void(0)" onClick="show()" >下一步</a></p>
-                    </div>
+                     <form action="user/findPassword1" method="get">
+	                    <label for="uname">美团账号</label>
+	                    <input class="uname" type="text" name="uname" placeholder="已注册邮箱"/>
+	                    </div>
+	                    <div class="formcontent">
+	                     <label for="yzm">&nbsp;验证码</label>
+	                     <input type="text" class="picYZM"/>
+	                     <img src="../IdentityServlet"  id="identity" onload="btn.disabled = false;" />
+	                     <a class="huan" href="javascript:void(0)" onclick="reloadImage()" id="btn">看不清楚?换一张</a>
+	                    </div>
+	                    
+	                    <div class="formcontent">
+	                      <label></label>
+	                       <p><a class="next" href="javascript:void(0)" onClick="show()" >下一步</a></p>
+	                    </div>
+	                    <div class="error">${errorMsg }</div>
+                    </form>
                  </div>
               </div>
            </div>
@@ -78,7 +84,7 @@
                   <label><img src="../images/mail2.png"/></label><h3>邮件已发送...</h3>
                 </div>
                 <div class="two">
-                   <a class="goMail" href="javascript:void(0)" onClick="show2()">去邮箱收信</a>
+                   <a href="#" class="goMail"  onClick="show2()" >去邮箱收信</a>
                 </div>
              </div>
            </div>
@@ -119,7 +125,12 @@
         </div>
     
 <script type="application/javascript" src="../js/findPassword.js" ></script>
- 
+  <script>
+	function reloadImage() {
+		document.getElementById('btn').disabled = true;
+		document.getElementById('identity').src='../IdentityServlet?ts=' + new Date().getTime();
+	}
+	</script>
 </body>
 </html>
 

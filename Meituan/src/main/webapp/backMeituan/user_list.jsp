@@ -258,7 +258,7 @@
 				if (num > 0) {
 					return false;
 				} else {
-					$.post("user/edit",function(data){
+					$.post("../user/edit",{username:$("input[name='用户名']").val()},function(data){
 						alert(data);
 					});
 					layer.alert('修改成功！', {

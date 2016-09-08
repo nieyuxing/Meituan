@@ -25,4 +25,13 @@ public class TypeHandler {
 		out.flush();
 		out.close();
 	}
+	@RequestMapping("/findAll")
+	public void findAll(PrintWriter out) {
+		List<Type> types = typeService.findAll();
+		System.out.println(types);
+		Gson gson = new Gson();
+		out.println(gson.toJson(types));
+		out.flush();
+		out.close();
+	}
 }
