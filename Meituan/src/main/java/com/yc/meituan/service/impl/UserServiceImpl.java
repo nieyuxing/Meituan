@@ -58,4 +58,10 @@ public class UserServiceImpl implements UserService {
 		return false;
 	}
 
+	@Override
+	public int update(String username, String pwd, String telphone,
+			String email, String idcard) {
+		return userMapper.update( username, pwd, telphone,email, idcard);
+	}
+
 }

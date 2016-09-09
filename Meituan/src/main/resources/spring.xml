@@ -64,12 +64,12 @@
 	<!-- 控制器驱动处理 -->
 	<mvc:annotation-driven />
 	
-	<mvc:interceptors>  
-	    <!-- 多个拦截器，顺序执行 -->  
-	    <!-- 登录认证拦截器 -->  
+	<!-- <mvc:interceptors>  
+	    多个拦截器，顺序执行  
+	    登录认证拦截器  
 	    <mvc:interceptor>  
 	        <mvc:mapping path="/**"/>  
 	        <bean class="com.yc.meituan.interceptor.LoginInterceptor"/>  
 	    </mvc:interceptor>  
-	</mvc:interceptors>  
+	</mvc:interceptors>  --> 
 </beans>

@@ -47,7 +47,7 @@
 							for="form-field-1">性别： </label>
 						<div class="col-sm-9">
 							<input type="text" name="性别" id="website-title2"
-								value="${admin.asex }" class="col-xs-7 text_info"
+								value="男" class="col-xs-7 text_info"
 								disabled="disabled" />
 						</div>
 					</div>

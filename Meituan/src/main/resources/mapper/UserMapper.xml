@@ -23,4 +23,7 @@
 		select * from users where email=#{usnameOremail} or usname=#{usnameOremail}
 	</select> 
 	
+	<update id="update" >
+		update users set usname =#{username}, uspwd=#{pwd} ,telnum=#{telphone},email=#{email},idcard=#{idcard} where usid =#{usid}
+	</update>
 </mapper>

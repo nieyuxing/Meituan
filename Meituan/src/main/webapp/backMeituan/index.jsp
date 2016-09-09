@@ -30,6 +30,10 @@
         
         
 <script type="text/javascript">	
+function GetAllAssess(){
+	$.post("../a")
+}
+
  $(function(){ 
  var cid = $('#nav_list> li>.submenu');
 	  cid.each(function(i){ 
@@ -232,7 +236,7 @@ $('.change_Password').on('click', function(){
 				  </li>
 						<li><a href="#" class="dropdown-toggle"><i class="icon-edit"></i><span class="menu-text"> 消息管理 </span><b class="arrow icon-angle-down"></b></a>
 							<ul class="submenu">
-								<li class="home"><a href="javascript:void(0)" name="backMeituan/Guestbook.jsp" title="评价列表" class="iframeurl"><i class="icon-double-angle-right"></i>评价列表</a></li>
+								<li class="home"><a href="javascript:void(0)" name="backMeituan/Guestbook.jsp" onclick="GetAllAssess()"title="评价列表" class="iframeurl"><i class="icon-double-angle-right"></i>评价列表</a></li>
 							</ul>
 						</li>
 						

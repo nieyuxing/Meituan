@@ -6,14 +6,17 @@ import java.util.List;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 import com.yc.meituan.entity.User;
@@ -21,9 +24,15 @@ import com.yc.meituan.service.UserService;
 
 @Controller
 @RequestMapping("/user")
+@SessionAttributes("user")
 public class UserHandler {
 	@Autowired
 	private UserService userService;
+	
+	@ModelAttribute
+	private void getModel(ModelMap map){
+		map.put("user",new User());
+	}
 
 	@RequestMapping(value = "/data")
 	public void listAll(PrintWriter out) {
@@ -109,12 +118,15 @@ public class UserHandler {
 		out.close();
 	}
 	@RequestMapping(value="/edit",method=RequestMethod.POST)
-    public void Edit(PrintWriter out,HttpServletRequest request){
-	    String username=(String) request.getAttribute("username");
-	    System.out.println(username);
-		System.out.println("到达edit方法...");
-		out.println(true);
+    public void Edit(User user,PrintWriter out,HttpSession session){
+		System.out.println("到达edit方法...User是"+user);
+		//int result=userService.update(username,pwd,telphone,email,idcard);
+		/*if(result>=0){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
 		out.flush();
-		out.close();
+		out.close();*/
  	}
 }

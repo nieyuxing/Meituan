@@ -157,10 +157,6 @@
 				class="add_name"><input value="" name="用户名" type="text"
 					class="text_add" /></span>
 				<div class="prompt r_f"></div></li>
-			<li><label class="label_name">真实姓名：</label><span
-				class="add_name"><input name="真实姓名" type="text"
-					class="text_add" /></span>
-				<div class="prompt r_f"></div></li>
 			
 			<li><label class="label_name">密码：</label><span
 				class="add_name"><input name="密码" type="text"
@@ -258,7 +254,12 @@
 				if (num > 0) {
 					return false;
 				} else {
-					$.post("../user/edit",{username:$("input[name='用户名']").val()},function(data){
+					var username= $("input[name='用户名']").val();
+					var pwd= $("input[name='密码']").val();
+					var telphone= $("input[name='移动电话']").val();
+					var email= $("input[name='邮箱']").val();
+					var idcard= $("input[name='身份证']").val();
+					$.post("../user/edit",{usname:username,uspwd:pwd,telnum:telphone,email:email,idcard:idcard},function(data){
 						alert(data);
 					});
 					layer.alert('修改成功！', {
