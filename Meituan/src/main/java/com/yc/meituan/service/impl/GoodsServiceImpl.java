@@ -15,6 +15,11 @@ public class GoodsServiceImpl implements GoodsService{
 	private GoodsMapper goodsMapper;
 
 	public List<Good> listAll() {
-		return goodsMapper.listAll();
+		return goodsMapper.getGoodAll();
+	}
+
+	@Override
+	public Good listGoodById(int gid) {
+		return goodsMapper.getGoodById(gid);
 	}
 }

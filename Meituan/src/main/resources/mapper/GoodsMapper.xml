@@ -3,7 +3,16 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.meituan.mapper.GoodsMapper">
-	<select id="listAll"  resultType="Good">
-		select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid
+	<sql id="selectGood">
+		select g.*,s.sname sname,s.sdetail,t.tname,e.state from goods g,store s,type t,evaluate e where g.sid=s.sid and t.tid=g.tid and e.gid=g.gid	
+	</sql>
+	
+	<select id="getGoodAll"  resultType="Good">
+		<!-- select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid -->
+		<include refid="selectGood" />		
 	</select> 
+	
+	<select id="getGoodById" parameterType="int" resultType="Good">
+		<include refid="selectGood"/> and g.gid=#{gid}
+	</select>
 </mapper>

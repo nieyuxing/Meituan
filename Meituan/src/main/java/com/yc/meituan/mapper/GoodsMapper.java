@@ -5,5 +5,7 @@ import java.util.List;
 import com.yc.meituan.entity.Good;
 
 public interface GoodsMapper {
-	List<Good> listAll();
+	List<Good> getGoodAll();
+
+	Good getGoodById(int gid);
 }

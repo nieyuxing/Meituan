@@ -3,9 +3,7 @@
 	menuA();
 });
 var flag=false;
-function menuA(){
-	
-	
+function menuA(){	
 	$("#box2").click(function() {
 		$("html,body").animate({
 			scrollTop : 0
@@ -47,7 +45,6 @@ function menuA(){
         });
  	})
  	
-	
  	
 	var dv = $('#nowLook'), st;
 	dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离

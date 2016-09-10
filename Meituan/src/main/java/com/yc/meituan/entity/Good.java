@@ -11,6 +11,8 @@ public class Good {
 	private int gcount;
 	private int ecount;
 	private int tid;
+	private String tname;
+	private int state;
 		
 	public Good() {
 		super();
@@ -110,11 +112,26 @@ public class Good {
 		this.tid = tid;
 	}
 
+	public String getTname() {
+		return tname;
+	}
+
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
 	@Override
 	public String toString() {
 		return "Good [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice + ", gpic=" + gpic + ", gdetails="
 				+ gdetails + ", sname=" + sname + ", sdetail=" + sdetail + ", gcount=" + gcount + ", ecount=" + ecount
-				+ ", tid=" + tid + "]";
+				+ ", tid=" + tid + ", tname=" + tname + ", state=" + state + "]";
 	}
-
 }

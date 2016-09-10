@@ -2,20 +2,27 @@ package com.yc.meituan.handler;
 
 import java.io.PrintWriter;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import com.google.gson.Gson;
 import com.yc.meituan.entity.Good;
 import com.yc.meituan.service.GoodsService;
 
+
 @Controller
 @RequestMapping("/goods")
+@SessionAttributes("goods")
 public class GoodsHandler {
 	@Autowired
 	private GoodsService goodsService;
+	
+	public void getModel(ModelMap map){
+		map.put("goods", new Good());
+	}
 
 	@RequestMapping("/listAll")
 	public void listAll(PrintWriter out) {
@@ -25,5 +32,12 @@ public class GoodsHandler {
 		out.println(gson.toJson(goods));
 		out.flush();
 		out.close();
+	}
+	
+	@RequestMapping("/details")
+	public String details(int gid,ModelMap map){
+		Good goods=goodsService.listGoodById(gid);
+		map.put("good", goods);
+		return "../page/details";
 	}
 }

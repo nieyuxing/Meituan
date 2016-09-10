@@ -6,4 +6,6 @@ import com.yc.meituan.entity.Good;
 
 public interface GoodsService {
 	List<Good> listAll();
+
+	Good listGoodById(int gid);
 }

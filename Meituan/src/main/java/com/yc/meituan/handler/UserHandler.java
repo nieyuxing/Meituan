@@ -12,8 +12,10 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 import com.yc.meituan.entity.User;
@@ -21,6 +23,7 @@ import com.yc.meituan.service.UserService;
 
 @Controller
 @RequestMapping("/user")
+@SessionAttributes("user")
 public class UserHandler {
   
 	@Autowired
@@ -35,6 +38,7 @@ public class UserHandler {
 		out.close();
 	}
   //用户登录
+    @ModelAttribute
   @RequestMapping(value="/login",method=RequestMethod.POST)
     public String userLogin(User user,ModelMap map){
 	    user= userService.login(user);
@@ -43,6 +47,7 @@ public class UserHandler {
 	    	map.put("errorMsg", "账号或密码错误!!!");
 	    	return "../page/login";
 	    }
+	    map.put("user", user);
 		return "../index";
   }
   
