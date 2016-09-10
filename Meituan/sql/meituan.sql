@@ -80,8 +80,36 @@ create table orders(
        oroom varchar2(100),   --订单送货地址
        usid int references users(usid),
        telnumber int ,
-       status int          --订单状态
+       status int          --金额
 );
+
+insert into orders values(seq_orders_oid.nextval,to_date('2016-09-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',1000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-01-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',2000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-02-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',3000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-03-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',4000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-04-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',5000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-05-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',6000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-06-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',7000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-07-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',8000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',90);
+
+commit
+SELECT * FROM ORDERS
+
+
+select (select count(1) from users)alluser,(select sum(status) from orders) alls, (select count(1) from orders) allorder ,sum(status) status,count(extract(MONTH from otime)) morder, extract(MONTH from otime)  otime from orders group by otime order by otime desc  
 
 --评价表
 create table evaluate(

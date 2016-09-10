@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,11 +13,6 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/dist/echarts.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-$.post("../user/home",function(data){
-	alert("123");
-});
-</script>
 <title>无标题文档</title>
 </head>
 
@@ -33,7 +31,7 @@ $.post("../user/home",function(data){
 						<i class="icon-user"></i>
 					</div>
 					<div class="value">
-						<h1>8</h1>
+						<h1>${order.alluser}</h1>
 						<p>商城用户</p>
 					</div>
 				</a> </section>
@@ -55,7 +53,7 @@ $.post("../user/home",function(data){
 					<i class="icon-shopping-cart"></i>
 				</div>
 				<div class="value">
-					<h1>0</h1>
+					<h1>${order.allorder}</h1>
 					<p>商城订单</p>
 				</div>
 				</section>
@@ -66,7 +64,7 @@ $.post("../user/home",function(data){
 					<i class="icon-bar-chart"></i>
 				</div>
 				<div class="value">
-					<h1>￥0</h1>
+					<h1>${order.alls}</h1>
 					<p>交易记录</p>
 				</div>
 				</section>
@@ -105,6 +103,14 @@ $.post("../user/home",function(data){
             ],
             function (ec,theme) {
                 var myChart = ec.init(document.getElementById('main'),theme);
+                $.post("../order/data",function(data){
+                	var money=[];
+                	var mo=[];
+                	for (var i = 0; i < data.length; i++) {
+						money.push(data[i].status);
+						mo.push(data[i].morder);
+					}         		
+                
                option = {
     title : {
         text: '月购买订单交易记录',
@@ -142,7 +148,7 @@ $.post("../user/home",function(data){
         {
             name:'所有订单',
             type:'bar',
-            data:[120, 49, 70, 232, 256, 767, 1356, 1622, 326, 200,164, 133],
+            data:mo,
             markPoint : {
                 data : [
                     {type : 'max', name: '最大值'},
@@ -152,7 +158,7 @@ $.post("../user/home",function(data){
         },{
             name:'交易金额',
             type:'bar',
-            data:[26, 59, 60, 264, 287, 77, 176, 122, 247, 148, 60, 23],
+            data:money,
             markPoint : {
                 data : [
                     {name : '年最高', value : 172, xAxis: 7, yAxis: 172, symbolSize:18},
@@ -164,8 +170,10 @@ $.post("../user/home",function(data){
     ]
 };
                 myChart.setOption(option);
+                },'json');
             }
         );
+            
     </script>
 	</div>
 </body>

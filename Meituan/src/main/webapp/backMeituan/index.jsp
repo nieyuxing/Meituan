@@ -219,7 +219,7 @@ $('.change_Password').on('click', function(){
 						</div>
 					</div><!-- #sidebar-shortcuts -->
 					<ul class="nav nav-list" id="nav_list">
-				     <li class="home"><a href="javascript:void(0)" name="backMeituan/home.html" class="iframeurl" title=""><i class="icon-dashboard"></i><span class="menu-text"> 系统首页 </span></a></li>
+				     <li class="home"><a href="javascript:void(0)" name="backMeituan/home.jsp" class="iframeurl" title=""><i class="icon-dashboard"></i><span class="menu-text"> 系统首页 </span></a></li>
                      <li><a href="#" class="dropdown-toggle"><i class="icon-desktop"></i><span class="menu-text"> 产品管理 </span><b class="arrow icon-angle-down"></b></a>
 					   <ul class="submenu">
 					  	 <li class="home"><a  href="javascript:void(0)" name="backMeituan/Products_List.html"  title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>产品类表</a></li>
@@ -273,7 +273,7 @@ $('.change_Password').on('click', function(){
 						</ul>
 					</div>
                     
-               <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;"name="iframe" frameborder="0" src="backMeituan/home.html">  </iframe> 
+               <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;"name="iframe" frameborder="0" src="backMeituan/home.jsp">  </iframe> 
 				 
 
 <!-- /.page-content -->
