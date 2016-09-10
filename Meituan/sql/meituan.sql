@@ -167,5 +167,6 @@ select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid
 select * from goods
 delete table users where 1=1
 
+		select type.*,type.tname name from type where tid=109
 
 commit;

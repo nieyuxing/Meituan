@@ -8,4 +8,6 @@ public interface TypeService {
 	List<Type> listAll();
 
 	List<Type> findAll();
+
+	Type findAllById(int tid);
 }

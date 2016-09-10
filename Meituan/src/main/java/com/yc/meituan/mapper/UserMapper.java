@@ -21,4 +21,6 @@ public interface UserMapper {
 	User getUserById(int usid);
 
 	int add(User user);
+
+	int del(int usid);
 }

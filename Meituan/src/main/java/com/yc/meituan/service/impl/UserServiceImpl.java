@@ -73,4 +73,9 @@ public class UserServiceImpl implements UserService {
 		return userMapper.add(user);
 	}
 
+	@Override
+	public int del(int usid) {
+		return userMapper.del(usid);
+	}
+
 }

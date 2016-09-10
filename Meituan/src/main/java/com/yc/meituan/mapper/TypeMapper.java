@@ -8,4 +8,6 @@ public interface TypeMapper {
 	List<Type> listAll();
 
 	List<Type> findAll();
+
+	Type findAllById(int tid);
 }

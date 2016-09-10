@@ -21,4 +21,9 @@ public class TypeServiceImpl implements TypeService{
 	public List<Type> findAll() {
 		return typeMapper.findAll();
 	}
+
+	@Override
+	public Type findAllById(int tid) {
+		return typeMapper.findAllById(tid);
+	}
 }

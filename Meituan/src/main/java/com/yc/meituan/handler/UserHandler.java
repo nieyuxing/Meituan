@@ -154,4 +154,17 @@ public class UserHandler {
 		out.flush();
 		out.close();
  	}
+	@RequestMapping(value="/del",method=RequestMethod.POST)
+    public void Del(int usid,PrintWriter out){
+		System.out.println("到达del方法...id是"+usid);
+		int result=userService.del(usid);
+		System.out.println(result);
+		if(result>=0){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
+ 	}
 }

@@ -56,7 +56,7 @@
         		<input type="text" class="input-text" value="" placeholder="" id="fptid" name="product-category-name">
       	</c:if>
       	<c:if test="${not empty list}">
-        		<input type="text" class="input-text" value="${list.fptid}" placeholder="" id="fptid" name="product-category-name">
+        		<input type="text" class="input-text" value="${list.tfid}" placeholder="" id="fptid" name="product-category-name">
       	</c:if>
       </div>
     </div>

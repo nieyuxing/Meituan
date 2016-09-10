@@ -34,4 +34,8 @@
 	 <insert id="add" parameterType="User">
 	 	insert into users values(seq_users_usid.nextval,#{usname},#{uspwd},#{telnum},#{email},null,#{idcard},'','')
 	 </insert> 
+	 
+	 <delete id="del" parameterType="int">
+	 	delete users where usid=#{usid}
+	 </delete>
 </mapper>

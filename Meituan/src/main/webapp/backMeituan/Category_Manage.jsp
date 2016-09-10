@@ -89,9 +89,10 @@ var setting = {
 			var zTree = $.fn.zTree.getZTreeObj("tree");
 			if (treeNode.isParent) {
 				zTree.expandNode(treeNode);
+				alert(treeNode);
 				return false;
 			} else {
-				$.post("../productType/findById/",{ptid:treeNode.ptid},function(data){
+				$.post("../type/findById/",{tid:treeNode.tid},function(data){
 					if(data){
 						alert("成功了");
 						

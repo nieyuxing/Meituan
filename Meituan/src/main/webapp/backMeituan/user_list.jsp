@@ -108,7 +108,7 @@
 		                  align: 'center',
 		                  formatter:function(value,row,index){  
 		               var e = '<a href="#" mce_href="#" onclick="member_edit(\''+ row.usid + '\')">编辑</a> ';  
-		               var d = '<a href="#" mce_href="#" onclick="member_del(\''+ row.usid +'\')">删除</a> ';  
+		               var d = '<a href="#" mce_href="#" onclick="member_del(this,\''+ row.usid +'\')">删除</a> ';  
 		                    return e+d;  
 		                } 
 		              }
@@ -180,7 +180,6 @@
 				class="add_name"><input name="身份证" type="text"
 					class="text_add" style="width: 350px" /></span>
 				<div class="prompt r_f"></div></li>
-			
 		</ul>
 		</form>
 	</div>
@@ -314,12 +313,23 @@
 		});
 	}
 	/*用户-删除*/
-	function member_del(obj, id) {
+	function member_del(obj,id) {
+		alert(id);
 		layer.confirm('确认要删除吗？', function(index) {
+			alert(id);
 			$(obj).parents("tr").remove();
-			layer.msg('已删除!', {
-				icon : 1,
-				time : 1000
+			$.post("../user/del",{usid:id},function(data){
+				if(data){
+					layer.alert('删除成功！', {
+						title : '提示框',
+						icon : 1,
+					});
+				}else{
+					layer.alert('删除失败！', {
+						title : '提示框',
+						icon : 1,
+					});
+				}
 			});
 		});
 	}

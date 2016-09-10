@@ -10,4 +10,8 @@
 	<select id="findAll"  resultType="Type">
 		select type.*,type.tname name from type
 	</select>
+	
+	<select id="findAllById" parameterType="int" resultType="type">
+		select type.*,type.tname name from type where tid=#{tid}
+	</select> 
 </mapper>
