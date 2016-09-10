@@ -13,10 +13,8 @@
 	href="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.css"
 	rel="stylesheet" />
 <script src="assets/js/jquery.min.js"></script>
-<script
-	src="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
-<script
-	src="http://cdn.bootcss.com/bootstrap-table/1.9.1/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-table/1.9.1/locale/bootstrap-table-zh-CN.min.js"></script>
 <script type="text/javascript">
 	window.jQuery
 			|| document.write("<script src='assets/js/jquery-2.0.3.min.js'>"
@@ -48,13 +46,20 @@
 			height : $(window).height() - 200,
 			striped : true,
 			pagination : true,
-			pageSize : 50,
-			pageList : [ 10, 25, 50, 100, 200 ],
+			dataType : "json",
+			pageList : [ 5, 8, 10 ],
+			pageSize : 5,
+			pageNumber : 1,
 			search : true,
-			sidePagination : "client",
+			sidePagination : 'client',
 			showColumns : true,
-			minimunCountColumns : 2, 
-			columns: [
+			minimumCountColumns : 2,
+			clickToSelect : true,
+			showToggle : true,
+			columns: [{
+						 title: '',
+						 checkbox:true
+					  },
 		              {
 		                title: '用户id',
 		                  field: 'usid',
@@ -102,8 +107,8 @@
 		                  field: 'id',
 		                  align: 'center',
 		                  formatter:function(value,row,index){  
-		               var e = '<a href="#" mce_href="#" onclick="member_edit(\''+ row.id + '\')">编辑</a> ';  
-		               var d = '<a href="#" mce_href="#" onclick="member_del(\''+ row.id +'\')">删除</a> ';  
+		               var e = '<a href="#" mce_href="#" onclick="member_edit(\''+ row.usid + '\')">编辑</a> ';  
+		               var d = '<a href="#" mce_href="#" onclick="member_del(\''+ row.usid +'\')">删除</a> ';  
 		                    return e+d;  
 		                } 
 		              }
@@ -151,6 +156,7 @@
 	<!--添加用户图层-->
 	<div class="add_menber" id="add_menber_style" style="display: none">
 		<form>
+		<input type="hidden" name="usid" value="${user.usid}" id="usid"></input>
 		<ul class=" page-content">
 		
 			<li><label class="label_name">用&nbsp;&nbsp;户 &nbsp;名：</label><span
@@ -212,9 +218,24 @@
 						if (num > 0) {
 							return false;
 						} else {
-							layer.alert('添加成功！', {
-								title : '提示框',
-								icon : 1,
+							var usid=$("input[name='usid']").val();
+							var usname= $("input[name='用户名']").val();
+							var pwd= $("input[name='密码']").val();
+							var telphone= $("input[name='移动电话']").val();
+							var email= $("input[name='电子邮箱']").val();
+							var idcard= $("input[name='身份证']").val();
+							$.post("../user/add",{usid:usid,usname:usname,uspwd:pwd,telnum:telphone,email:email,idcard:idcard},function(data){
+								if(data){
+									layer.alert('添加成功！', {
+										title : '提示框',
+										icon : 1,
+									});
+								}else{
+									layer.alert('添加失败！', {
+										title : '提示框',
+										icon : 1,
+									});
+								}
 							});
 							layer.close(index);
 						}
@@ -228,6 +249,14 @@
 	
 	/*用户-编辑*/
 	function member_edit(id) {
+		$.post("../user/editget?usid="+id,function(data){
+			$("input[name='usid']").val(data.usid);
+			$("input[name='用户名']").val(data.usname);
+			$("input[name='密码']").val(data.uspwd);
+			$("input[name='移动电话']").val(data.telnum);
+			$("input[name='电子邮箱']").val(data.email);
+			$("input[name='身份证']").val(data.idcard);
+		},"json"); 
 		layer.open({
 			type : 1,
 			title : '修改用户信息',
@@ -254,18 +283,31 @@
 				if (num > 0) {
 					return false;
 				} else {
-					var username= $("input[name='用户名']").val();
+					var usid=$("input[name='usid']").val();
+					var usname= $("input[name='用户名']").val();
 					var pwd= $("input[name='密码']").val();
 					var telphone= $("input[name='移动电话']").val();
-					var email= $("input[name='邮箱']").val();
+					var email= $("input[name='电子邮箱']").val();
 					var idcard= $("input[name='身份证']").val();
-					$.post("../user/edit",{usname:username,uspwd:pwd,telnum:telphone,email:email,idcard:idcard},function(data){
-						alert(data);
+					$.post("../user/edit",{usid:usid,usname:usname,uspwd:pwd,telnum:telphone,email:email,idcard:idcard},function(data){
+						if(data){
+							layer.alert('修改成功！', {
+								title : '提示框',
+								icon : 1,
+							});
+						}else{
+							layer.alert('修改失败！', {
+								title : '提示框',
+								icon : 1,
+							});
+						}
 					});
-					layer.alert('修改成功！', {
-						title : '提示框',
-						icon : 1,
-					});
+					$("input[name='usid']").val();
+					$("input[name='用户名']").val();
+					$("input[name='密码']").val();
+					$("input[name='移动电话']").val();
+					$("input[name='电子邮箱']").val();
+					$("input[name='身份证']").val();
 					layer.close(index);
 				}
 			}

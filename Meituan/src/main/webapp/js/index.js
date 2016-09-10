@@ -13,15 +13,14 @@ function menuA() {
 						$(this).toggleClass('sel');
 						var str = this.childNodes[0].innerHTML;
 						// alert(str);
-						$
-								.get(
+						$.get(
 										"type/listAll",
 										function(data) {
 											var listStr = "";
 											for (var i = 0; i < data.length; i++) {
 												if (data[i].ftname == str) {
 													listStr += '<li class="typess"><a href="goods/type?tname=data[i].tname">'
-															+ data[i].tname
+															+ data[i].name
 															+ '</a></li>';
 												}
 											}

@@ -14,6 +14,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -118,15 +119,39 @@ public class UserHandler {
 		out.close();
 	}
 	@RequestMapping(value="/edit",method=RequestMethod.POST)
-    public void Edit(User user,PrintWriter out,HttpSession session){
+    public void Edit(User user,PrintWriter out){
 		System.out.println("到达edit方法...User是"+user);
-		//int result=userService.update(username,pwd,telphone,email,idcard);
-		/*if(result>=0){
+		int result=userService.update(user);
+		System.out.println(result);
+		if(result>=0){
 			out.println(true);
 		}else{
 			out.println(false);
 		}
 		out.flush();
-		out.close();*/
+		out.close();
+ 	}
+	@RequestMapping(value="/editget",method=RequestMethod.POST)
+    public void Editget(int usid,PrintWriter out){
+		System.out.println("到达Editget方法...id是"+usid);
+		User users=userService.getUserById(usid);
+		Gson gson=new Gson();
+		System.out.println(users);
+		out.print(gson.toJson(users));
+		out.flush();
+		out.close();
+ 	}
+	@RequestMapping(value="/add",method=RequestMethod.POST)
+    public void Add(User user,PrintWriter out){
+		System.out.println("到达edit方法...User是"+user);
+		int result=userService.add(user);
+		System.out.println("添加结果是..."+result);
+		if(result>=0){
+			out.println(true);
+		}else{
+			out.println(false);
+		}
+		out.flush();
+		out.close();
  	}
 }
