@@ -9,7 +9,7 @@ import com.yc.meituan.entity.Good;
 import com.yc.meituan.mapper.GoodsMapper;
 import com.yc.meituan.service.GoodsService;
 
-@Service
+@Service("goodsService")
 public class GoodsServiceImpl implements GoodsService{
 	@Autowired
 	private GoodsMapper goodsMapper;
@@ -17,4 +17,16 @@ public class GoodsServiceImpl implements GoodsService{
 	public List<Good> listAll() {
 		return goodsMapper.listAll();
 	}
+
+	@Override
+	public List<Good> getgid(int gid) {
+		return goodsMapper.gid(gid);
+	}
+
+	@Override
+	public List<Good> goodInfo(int tid) {
+		return goodsMapper.goodInfo(tid);
+	}
+
+
 }

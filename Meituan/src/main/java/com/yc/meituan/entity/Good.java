@@ -13,12 +13,10 @@ public class Good {
 	private int tid;
 		
 	public Good() {
-		super();
 	}
 
 	public Good(int gid, String gname, double gprice, String gpic, String gdetails, String sname, String sdetail,
 			int gcount, int ecount) {
-		super();
 		this.gid = gid;
 		this.gname = gname;
 		this.gprice = gprice;
@@ -112,7 +110,7 @@ public class Good {
 
 	@Override
 	public String toString() {
-		return "Good [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice + ", gpic=" + gpic + ", gdetails="
+		return "\nGood [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice + ", gpic=" + gpic + ", gdetails="
 				+ gdetails + ", sname=" + sname + ", sdetail=" + sdetail + ", gcount=" + gcount + ", ecount=" + ecount
 				+ ", tid=" + tid + "]";
 	}

@@ -19,7 +19,7 @@ public class TypeHandler {
 	@RequestMapping("/listAll")
 	public void listAll(PrintWriter out) {
 		List<Type> types = typeService.listAll();
-		System.out.println(types);
+		//System.out.println(types);
 		Gson gson = new Gson();
 		out.println(gson.toJson(types));
 		out.flush();

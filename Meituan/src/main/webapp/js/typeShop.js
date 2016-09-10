@@ -1,10 +1,9 @@
 // JavaScript Document
-	$(function(){
+$(function(){
 	menuA();
 });
 var flag=false;
 function menuA(){
-	
 	
 	$("#box2").click(function() {
 		$("html,body").animate({
@@ -57,4 +56,6 @@ function menuA(){
 	if (dv.css('position') != 'fixed') dv.css({ 'position': 'fixed', top: -20 ,right:189});
 	} else if (dv.css('position') != 'static') dv.css({ 'position': 'static' });
 	});
+	
 }
+

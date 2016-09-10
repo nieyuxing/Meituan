@@ -1,34 +1,26 @@
 $(function() {
 	$.get("goods/listAll", function(data) {
-		alert(data);
+		//alert(data);
 	}, "json");
 	menuA();
 });
 
 var flag = false;
 function menuA() {
-	$('#b_body_left>ul>li')
-			.hover(
-					function() {
-						$(this).toggleClass('sel');
-						var str = this.childNodes[0].innerHTML;
-						// alert(str);
-						$
-								.get(
-										"type/listAll",
-										function(data) {
-											var listStr = "";
-											for (var i = 0; i < data.length; i++) {
-												if (data[i].ftname == str) {
-													listStr += '<li class="typess"><a href="goods/type?tname=data[i].tname">'
-															+ data[i].tname
-															+ '</a></li>';
-												}
-											}
-											$("#types").html(listStr);
-										}, "json");
-						$('#b_body_center').show();
-					});
+	$('#b_body_left>ul>li').hover(function() {
+		$(this).toggleClass('sel');
+		var str = this.childNodes[0].innerHTML;
+		$.get("type/listAll",function(data) {
+			var listStr = "";
+			for (var i = 0; i < data.length; i++) {
+			if (data[i].ftname == str) {
+			listStr += '<li class="typess"><a href="goods/type?tid='+data[i].tid+'">'+data[i].tname+'</a></li>';
+								}
+							}
+							$("#types").html(listStr);
+						}, "json");
+				$('#b_body_center').show();
+			});
 
 	$('#b_body_left').mouseout(function() {
 		if (!flag) {
@@ -133,7 +125,7 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==101){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/gids?gid='+data[i].gid +'"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
 				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
@@ -144,8 +136,8 @@ $(function(){
 		}
 		$("#meishiType").html(listStr);
 	}, "json");
-	
-	$.get("goods/listAll",function(data) {
+
+	$.get("goods/listAll",function(data){
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==102){
@@ -161,7 +153,7 @@ $(function(){
 		}
 		$("#xiuxianType").html(listStr);
 	}, "json");
-	
+
 	$.get("goods/listAll",function(data) {
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
@@ -178,7 +170,7 @@ $(function(){
 		}
 		$("#dianyingType").html(listStr);
 	}, "json");
-	
+
 	$.get("goods/listAll",function(data) {
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
@@ -195,7 +187,7 @@ $(function(){
 		}
 		$("#jiudianType").html(listStr);
 	}, "json");
-	
+
 	$.get("goods/listAll",function(data) {
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
@@ -212,7 +204,7 @@ $(function(){
 		}
 		$("#shenghuoType").html(listStr);
 	}, "json");
-	
+
 	$.get("goods/listAll",function(data) {
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
@@ -229,7 +221,7 @@ $(function(){
 		}
 		$("#gouwuType").html(listStr);
 	}, "json");
-	
+
 	$.get("goods/listAll",function(data) {
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
@@ -246,7 +238,7 @@ $(function(){
 		}
 		$("#lirenType").html(listStr);
 	}, "json");
-	
+
 	$.get("goods/listAll",function(data) {
 		var listStr ="";	
 		for (var i = 0; i < data.length; i++) {
@@ -263,4 +255,12 @@ $(function(){
 		}
 		$("#lvyouType").html(listStr);
 	}, "json");
+	
 });
+	
+	//获得
+	function getGid(){
+		
+	}
+	
+	

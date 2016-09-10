@@ -6,4 +6,8 @@
 	<select id="listAll"  resultType="Good">
 		select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid
 	</select> 
+	
+	<select id="goodInfo" resultType="Good" parameterType="int">
+	    select g.*,a.*,b.tname  from type a,type b ,goods g where a.tfid=b.tid and g.tid=b.tid and a.tid=#{tid}
+	</select>
 </mapper>
