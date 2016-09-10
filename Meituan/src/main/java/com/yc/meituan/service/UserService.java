@@ -16,4 +16,12 @@ public interface UserService {
 
 	boolean usnameOremailverify(String usnameOremail);
 
+	int update(User user);
+
+	User getUserById(int usid);
+
+	int add(User user);
+
+	int del(int usid);
+
 }

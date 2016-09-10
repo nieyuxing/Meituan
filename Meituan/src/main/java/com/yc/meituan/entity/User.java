@@ -8,11 +8,30 @@ public class User {
 	private String email; // --邮箱
 	private double purse; // --钱包余额
 	private String idcard; // --身份证号码
+	private String text2;
 
 	public User() {
 	}
 
-	public User(int usid, String usname, String uspwd, String telnum, String email, int purse, String idcard) {
+
+	public String getText2() {
+		return text2;
+	}
+
+
+	public void setText2(String text2) {
+		this.text2 = text2;
+	}
+
+
+	public void setPurse(double purse) {
+		this.purse = purse;
+	}
+
+
+	public User(int usid, String usname, String uspwd, String telnum,
+			String email, double purse, String idcard, String text2) {
+		super();
 		this.usid = usid;
 		this.usname = usname;
 		this.uspwd = uspwd;
@@ -20,7 +39,10 @@ public class User {
 		this.email = email;
 		this.purse = purse;
 		this.idcard = idcard;
+		this.text2 = text2;
 	}
+
+
 
 	public User(String uspwd, String email) {
 		this.uspwd = uspwd;
@@ -83,10 +105,13 @@ public class User {
 		this.idcard = idcard;
 	}
 
+
 	@Override
 	public String toString() {
-		return "User [usid=" + usid + ", usname=" + usname + ", uspwd=" + uspwd + ", telnum=" + telnum + ", email="
-				+ email + ", purse=" + purse + ", idcard=" + idcard + "]";
+		return "User [usid=" + usid + ", usname=" + usname + ", uspwd=" + uspwd
+				+ ", telnum=" + telnum + ", email=" + email + ", purse="
+				+ purse + ", idcard=" + idcard + ", text2=" + text2 + "]";
 	}
 
+	
 }

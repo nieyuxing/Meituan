@@ -6,4 +6,8 @@ import com.yc.meituan.entity.Type;
 
 public interface TypeService {
 	List<Type> listAll();
+
+	List<Type> findAll();
+
+	Type findAllById(int tid);
 }
