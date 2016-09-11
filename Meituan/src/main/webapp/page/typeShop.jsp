@@ -10,7 +10,7 @@
 <link href="../css/details.css" type="text/css" rel="stylesheet" />
 <link href="../css/typeShop.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
-
+<script type="text/javascript" src="../js/typeShop.js"></script>
 </head>
 <body>
 	<div id="body-header">

@@ -140,10 +140,10 @@
 							</div>
 						</div>
 						<div class="box04">
-							<form  id="" action="../goods/shopping" method="post">
+							<form  id="" action="../page/shopping.jsp" method="post">
 								<input class="qianggou" type="submit" value="√ 立即抢购">
 							</form>
-							<a href="" id="che"><img src="../images/gouwuche.jpg"></a>
+							<a href="../goods/shopping?gid=${good.gid}" id="che"><img src="../images/gouwuche.jpg"></a>
 						</div>
 					</div>
 				</div>

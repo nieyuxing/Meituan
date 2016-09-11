@@ -6,8 +6,7 @@ $(function() {
 });
 
 var flag = false;
-function menuA() {
-<<<<<<< HEAD
+function menuA(){ 
 	$('#b_body_left>ul>li').hover(function() {
 		$(this).toggleClass('sel');
 		var str = this.childNodes[0].innerHTML;
@@ -22,7 +21,6 @@ function menuA() {
 						}, "json");
 				$('#b_body_center').show();
 			});
-=======
 	$('#b_body_left>ul>li')
 			.hover(
 					function() {
@@ -44,7 +42,6 @@ function menuA() {
 										}, "json");
 						$('#b_body_center').show();
 					});
->>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 	$('#b_body_left').mouseout(function() {
 		if (!flag) {
@@ -150,11 +147,7 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==101){
 				listStr += '<div class="box7">';
-<<<<<<< HEAD
-				listStr += '<a href="goods/gids?gid='+data[i].gid +'"><img src="images/'+data[i].gpic+'" class="img01"></a>';
-=======
 				listStr += '<a href="goods/details?gid=' + data[i].gid+ '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
->>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 				listStr += '<h3 class="h333">';
 				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';

@@ -7,10 +7,10 @@ import com.yc.meituan.entity.Good;
 public interface GoodsMapper {
 	List<Good> listAll();
 
-	List<Good> gid(int gid);
-
 	List<Good> goodInfo(int tid);
 	
 	Good getGoodById(int gid);
+
+	List<Good> getGoodByGid(int gid);
 
 }

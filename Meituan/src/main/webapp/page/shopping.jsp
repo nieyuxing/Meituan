@@ -77,9 +77,9 @@
 							<th class="total" width="70">小计</th>
 							<th width="80">操作</th>
 						</tr>
-
-
-						<tr class="list-content01">
+						
+					
+						<%-- <tr class="list-content01">
 							<td id="shopping001" class="cartItem" colspan="6">
 								<table id="shopping001_one" cellspacing="0">
 									<tbody>
@@ -89,9 +89,9 @@
 												value="">
 											</td>
 											<td class="desc" width="420"><a href=""><img
-													src="../images/yangpin.jpg" width="63" height="39"> <span>麦琪：单人下午茶套餐，包间免费，提供免费WiFi</span></a>
+													src="../images/yangpin.jpg" width="63" height="39"><span>${good.gname }</span></a>
 											</td>
-											<td class="price" width="70">￥<span class="J-price">${good.gpic }</span>
+											<td class="price" width="70">￥<span class="J-price">${good.gprice }</span>
 											</td>
 											<td class="saleNum" width="150">
 												<div class="cart-quantity">
@@ -114,8 +114,7 @@
 									</tbody>
 								</table>
 							</td>
-						</tr>
-
+						</tr> --%>
 
 						<tr class="jiezhang">
 							<td></td>

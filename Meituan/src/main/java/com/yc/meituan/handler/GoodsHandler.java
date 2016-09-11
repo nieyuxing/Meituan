@@ -29,7 +29,7 @@ public class GoodsHandler {
 	@RequestMapping(value="/listAll",method=RequestMethod.GET) 
 	public void listAll(PrintWriter out){
 		List<Good> goods = goodsService.listAll();
-		//System.out.println(goods);
+		System.out.println(goods);
 		Gson gson = new Gson();
 		out.println(gson.toJson(goods));
 		out.flush();
@@ -39,13 +39,20 @@ public class GoodsHandler {
 	@RequestMapping(value="/type",method=RequestMethod.GET) 
 	public String  goodInfo(int tid,ModelMap map){
 		System.out.println(tid);
-		List<Good>goods=goodsService.goodInfo(tid);
+		List<Good> goods=goodsService.goodInfo(tid);
 		System.out.println(goods);
 		map.put("goods", goods);
 		return "../page/typeShop";
 	}
 	
-	
+	@RequestMapping("/shopping") 
+	public String  shopping(int gid,ModelMap map){
+		System.out.println(gid);
+		List<Good> goods=goodsService.listGoodByGid(gid);
+		System.out.println(goods);
+		map.put("goods", goods);
+		return "../page/shopping";
+	}
 	
 	@RequestMapping("/details")
 	public String details(int gid,ModelMap map){
