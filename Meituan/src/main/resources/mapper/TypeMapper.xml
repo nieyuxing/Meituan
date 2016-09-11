@@ -4,6 +4,14 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.meituan.mapper.TypeMapper">
 	<select id="listAll"  resultType="Type">
-		select a.*,b.tname ftname from type a,type b where a.tfid=b.tid
+		select a.*,b.tname ftname,a.tname name from type a,type b where a.tfid=b.tid
+	</select> 
+	
+	<select id="findAll"  resultType="Type">
+		select type.*,type.tname name from type
+	</select>
+	
+	<select id="findAllById" parameterType="int" resultType="type">
+		select type.*,type.tname name from type where tid=#{tid}
 	</select> 
 </mapper>

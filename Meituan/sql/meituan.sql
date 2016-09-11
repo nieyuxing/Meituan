@@ -33,7 +33,11 @@ create table users(
   telnum varchar2(45) unique ,  --电话
   email varchar2(50) unique not null,    --邮箱
   purse number(10,2),             --钱包余额
+<<<<<<< HEAD
   idcard int,            --身份证号码
+=======
+  idcard varchar2(60),            --身份证号码
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
   text1 varchar2(200),   --用户图片
   text2 varchar2(200)    --预留字段
 );
@@ -52,6 +56,7 @@ create table type(
        tname varchar2(20),    --类型名
        tfid int      --父类型id
 );
+
 
 --商品表
 create table goods(
@@ -81,8 +86,36 @@ create table orders(
        oroom varchar2(100),   --订单送货地址
        usid int references users(usid),
        telnumber int ,
-       status int          --订单状态
+       status int          --金额
 );
+
+insert into orders values(seq_orders_oid.nextval,to_date('2016-09-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',1000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-01-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',2000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-02-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',3000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-03-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',4000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-04-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',5000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-05-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',6000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-06-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',7000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-07-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',8000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',9000);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',900);
+insert into orders values(seq_orders_oid.nextval,to_date('2016-08-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',90);
+
+commit
+SELECT * FROM ORDERS
+
+
+select (select count(1) from users)alluser,(select sum(status) from orders) alls, (select count(1) from orders) allorder ,sum(status) status,count(extract(MONTH from otime)) morder, extract(MONTH from otime)  otime from orders group by otime order by otime desc  
 
 --评价表
 create table evaluate(
@@ -94,9 +127,12 @@ create table evaluate(
        state int  ,              --评价分数1-5
        epics varchar2(100)		--评价图片
 );
+<<<<<<< HEAD
 insert into evaluate values(seq_evaluate_eid.nextval,1021,100009,'评价内容',to_date('2015-06-08','yyyy-mm-dd'),4,'评价图片');
 
 select * from type where tname='美食'   
+=======
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 drop sequence seq_users_usid;
 drop sequence seq_store_sid;
@@ -167,9 +203,16 @@ insert into goods values(seq_goods_gid.nextval,'南岳衡山风景名胜区','20
 
 select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid
 
+<<<<<<< HEAD
 
 select * from store
 delete table users where 1=1
+=======
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
+select * from goods
+delete table users where 1=1
+
+		select type.*,type.tname name from type where tid=109
 
 commit;

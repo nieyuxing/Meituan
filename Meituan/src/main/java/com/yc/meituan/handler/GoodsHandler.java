@@ -45,4 +45,12 @@ public class GoodsHandler {
 		return "../page/typeShop";
 	}
 	
+	
+	
+	@RequestMapping("/details")
+	public String details(int gid,ModelMap map){
+		Good goods=goodsService.listGoodById(gid);
+		map.put("good", goods);
+		return "../page/details";
+	}
 }

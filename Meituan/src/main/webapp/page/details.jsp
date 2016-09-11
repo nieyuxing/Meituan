@@ -98,40 +98,35 @@
 			<div id="body-content-on-header"></div>
 			<div id="body-content-on-content">
 				<div id="details-up">
-					<h1>【雁峰区】新至尊比萨</h1>
-					<div class="jieshao">仅售32元！价值56元的比萨15选1，建议1-2人使用，提供免费WiFi。</div>
+					<input type="hidden" name="gid" value="${good.gid }" id="gid" />
+					<h1>${good.gname}</h1>
+					<div class="jieshao">${good.gdetails}</div>
 					<div class="details-up-left">
 						<div id="details-up-left-up">
-							<img src="../images/ceshi02.jpg" alt="测试" />
+							<img src="../images/${good.gpic}" alt="测试"  width="460" height="284">
 						</div>
 						<div id="details-up-left-down">
 							<div id="smallDiv">
-								<img src="../images/ceshi02.jpg" alt="测试小图标" width="78px"
+								<img src="../images/${good.gpic}" alt="测试小图标" width="78px"
 									height="45px" />
 							</div>
 						</div>
 					</div>
 					<div class="details-up-right">
 						<div class="box01">
-							价格<span
-								style="color: #F00; font-size: 24px; margin: 0 20px 0 24px;">￥32</span>门店价
-							<del>￥56</del>
+							价格<span style="color: #F00; font-size: 24px; margin: 0 20px 0 24px;">￥${good.gprice }</span>
 						</div>
 						<div class="box02">
 							<div class="box03">
-								已售 <span style="color: #F00; font-size: 14px;">111111</span>
+								已售 <span style="color: #F00; font-size: 14px;">${good.gcount }</span>
 							</div>
 							<div class="box03">
-								<span style="color: #F00; font-size: 14px;">10</span> 分
+								<span style="color: #F00; font-size: 14px;">${good.state }</span> 分
 							</div>
 							<div class="box03">
-								<span style="color: #F00; font-size: 14px;">1111</span> 人评价
+								<span style="color: #F00; font-size: 14px;">${good.ecount}</span> 人评价
 							</div>
-						</div>
-						<div class="box01">
-							有效期<span style="margin-left: 20px;">截止到2016.09.27<span
-								style="color: #F00; font-size: 14px;">周末、法定节假日通用</span></span>
-						</div>
+						</div>			
 						<div class="box01">
 							<span style="float: left;">数量</span>
 							<div class="cart-quantity">
@@ -145,7 +140,7 @@
 							</div>
 						</div>
 						<div class="box04">
-							<form  id="" action="shopping.jsp" method="post">
+							<form  id="" action="../goods/shopping" method="post">
 								<input class="qianggou" type="submit" value="√ 立即抢购">
 							</form>
 							<a href="" id="che"><img src="../images/gouwuche.jpg"></a>

@@ -1,35 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css"/>       
-        <link href="assets/css/codemirror.css" rel="stylesheet">
+        <link href="assets/css/codemirror.css" rel="stylesheet"/>
         <link rel="stylesheet" href="assets/css/ace.min.css" />
-        <link rel="stylesheet" href="Widget/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+        <link rel="stylesheet" href="Widget/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css"/>
         <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-        
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-        <!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-			<script src="assets/js/jquery.min.js"></script>
-		<!-- <![endif]-->
-		<!--[if IE]>
-       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <![endif]-->
-		<!--[if !IE]> -->
+       
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
-		<!-- <![endif]-->
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
+		
         <script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -58,8 +43,8 @@
   </div>
   </div>  
   </div>
-<!---->
- <iframe ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO  SRC="product-category-add.html" class="page_right_style"></iframe>
+
+ <iframe ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO  SRC="product-category-add.jsp" class="page_right_style"></iframe>
  </div>
 </div>
 </body>
@@ -93,10 +78,10 @@ var setting = {
 	},
 	data: {
 		simpleData: {
-			enable:true,
-			idKey: "id",
-			pIdKey: "pId",
-			rootPId: ""
+				enable:true,
+				idKey: "tid",
+				pIdKey: "tfid",
+				rootPId: ""
 		}
 	},
 	callback: {
@@ -104,33 +89,37 @@ var setting = {
 			var zTree = $.fn.zTree.getZTreeObj("tree");
 			if (treeNode.isParent) {
 				zTree.expandNode(treeNode);
+				alert(treeNode);
 				return false;
 			} else {
-				demoIframe.attr("src",treeNode.file + ".html");
-				return true;
+				$.post("../type/findById/",{tid:treeNode.tid},function(data){
+					if(data){
+						alert("成功了");
+						
+						$("#testIframe").attr("src","product-category-add.jsp?" + new Date().getTime());
+					}
+				},"json");//返回数据的格式
+		
+ 	return true;
 			}
 		}
 	}
 };
 
-var zNodes =[
-	{ id:1, pId:0, name:"商城分类列表", open:true},
-	{ id:11, pId:1, name:"蔬菜水果"},
-	{ id:111, pId:11, name:"蔬菜"},
-	{ id:112, pId:11, name:"苹果"},
-	{ id:113, pId:11, name:"大蒜"},
-	{ id:114, pId:11, name:"白菜"},
-	{ id:115, pId:11, name:"青菜"},
-	{ id:12, pId:1, name:"手机数码"},
-	{ id:121, pId:12, name:"手机 "},
-	{ id:122, pId:12, name:"照相机 "},
-	{ id:13, pId:1, name:"电脑配件"},
-	{ id:131, pId:13, name:"手机 "},
-	{ id:122, pId:13, name:"照相机 "},
-	{ id:14, pId:1, name:"服装鞋帽"},
-	{ id:141, pId:14, name:"手机 "},
-	{ id:42, pId:14, name:"照相机 "},
-];
+var zNodes;  
+$.ajax({
+    type: 'Post',
+    url: '../type/findAll/',
+  	dataType: "json", //可以是text，如果用text，返回的结果为字符串；如果需要json格式的，可是设置为json
+    success: function (data) {
+		$.fn.zTree.init( $("#treeDemo"), setting, data);
+		console.info(data);
+		
+    },
+    error: function (msg) {
+        alert(" 数据加载失败！" + msg);
+    }
+}); 
 		
 var code;
 		
@@ -141,8 +130,6 @@ function showCode(str) {
 }
 		
 $(document).ready(function(){
-	var t = $("#treeDemo");
-	t = $.fn.zTree.init(t, setting, zNodes);
 	demoIframe = $("#testIframe");
 	demoIframe.bind("load", loadReady);
 	var zTree = $.fn.zTree.getZTreeObj("tree");

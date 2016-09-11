@@ -7,6 +7,7 @@ $(function() {
 
 var flag = false;
 function menuA() {
+<<<<<<< HEAD
 	$('#b_body_left>ul>li').hover(function() {
 		$(this).toggleClass('sel');
 		var str = this.childNodes[0].innerHTML;
@@ -21,6 +22,29 @@ function menuA() {
 						}, "json");
 				$('#b_body_center').show();
 			});
+=======
+	$('#b_body_left>ul>li')
+			.hover(
+					function() {
+						$(this).toggleClass('sel');
+						var str = this.childNodes[0].innerHTML;
+						// alert(str);
+						$.get(
+										"type/listAll",
+										function(data) {
+											var listStr = "";
+											for (var i = 0; i < data.length; i++) {
+												if (data[i].ftname == str) {
+													listStr += '<li class="typess"><a href="goods/type?tname=data[i].tname">'
+															+ data[i].name
+															+ '</a></li>';
+												}
+											}
+											$("#types").html(listStr);
+										}, "json");
+						$('#b_body_center').show();
+					});
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 	$('#b_body_left').mouseout(function() {
 		if (!flag) {
@@ -118,6 +142,7 @@ $(function() {
 	});	
 });
 
+
 //index.jsp商品信息显示
 $(function(){
 	$.get("goods/listAll",function(data) {
@@ -125,9 +150,13 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==101){
 				listStr += '<div class="box7">';
+<<<<<<< HEAD
 				listStr += '<a href="goods/gids?gid='+data[i].gid +'"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+=======
+				listStr += '<a href="goods/details?gid=' + data[i].gid+ '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -142,9 +171,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==102){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -159,9 +188,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==103){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -176,9 +205,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==104){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -193,9 +222,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==105){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -210,9 +239,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==106){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -227,9 +256,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==107){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';
@@ -244,9 +273,9 @@ $(function(){
 		for (var i = 0; i < data.length; i++) {
 			if(data[i].tid==108){
 				listStr += '<div class="box7">';
-				listStr += '<a href="page/details.jsp"><img src="images/'+data[i].gpic+'" class="img01"></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '"><img src="images/'+data[i].gpic+'" class="img01"></a>';
 				listStr += '<h3 class="h333">';
-				listStr += '<a href="page/details.jsp" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
+				listStr += '<a href="goods/details?gid=' + data[i].gid + '" class="typeShopA"><p class="shopTitle">'+data[i].gname+'</p><span style="color:#999;">'+data[i].sdetail+'</span></a>';
 				listStr += '</h3>';
 				listStr += '<p><span style="color:red;font-size:18px;margin-left:10px;">￥'+data[i].gprice+'</span><span style="float:right;margin-right:10px;color:#999;">已售'+data[i].gcount+'</span></p>';
 				listStr += '<div class="box7-class"><a href="#" class="pj"><img src="images/pingjia04.png" width="54" height="12"><span style="margin-left:20px;">'+data[i].ecount+'人评价</span></a></div>';

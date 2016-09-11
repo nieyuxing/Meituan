@@ -23,7 +23,6 @@
 		</script>
 		<script src="backMeituan/assets/js/bootstrap.min.js"></script>
 		<script src="backMeituan/assets/js/typeahead-bs2.min.js"></script>
-
 		<script src="backMeituan/assets/js/ace-elements.min.js"></script>
 		<script src="backMeituan/assets/js/ace.min.js"></script>
         <script src="backMeituan/assets/layer/layer.js" type="text/javascript"></script>
@@ -31,6 +30,10 @@
         
         
 <script type="text/javascript">	
+function GetAllAssess(){
+	$.post("../a")
+}
+
  $(function(){ 
  var cid = $('#nav_list> li>.submenu');
 	  cid.each(function(i){ 
@@ -77,24 +80,6 @@
     
 		
 });
-//jQuery( document).ready(function(){
-//	  $("#submit").click(function(){
-//	// var num=0;
-//     var str="";
-//     $("input[type$='password']").each(function(n){
-//          if($(this).val()=="")
-//          {
-//              // num++;
-//			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
-//                title: '提示框',				
-//				icon:0,				
-//          }); 
-//             // layer.msg(str+=""+$(this).attr("name")+"不能为空！\r\n");
-//             layer.close(index);
-//          }		  
-//     });    
-//})		
-//	});
 
 $( document).ready(function(){
   $('#nav_list').find('li.home').click(function(){
@@ -205,73 +190,8 @@ $('.change_Password').on('click', function(){
 								<li><a href="javascript:ovid(0)" id="Exit_system"><i class="icon-off"></i>退出</a></li>
 							</ul>
 						</li>
-	                   <li class="purple">
-						<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-bell-alt"></i><span class="badge badge-important">8</span></a>
-							<ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-                            <li class="dropdown-header"><i class="icon-warning-sign"></i>8条通知</li>
-                            <li>
-                              <a href="#">
-										<div class="clearfix">
-											<span class="pull-left">
-												<i class="btn btn-xs no-hover btn-pink icon-comment"></i>
-												新闻评论
-											</span>
-											<span class="pull-right badge badge-info">+12</span>
-										</div>
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										<i class="btn btn-xs btn-primary icon-user"></i>
-										切换为编辑登录..
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										<div class="clearfix">
-											<span class="pull-left">
-												<i class="btn btn-xs no-hover btn-success icon-shopping-cart"></i>
-												新订单
-											</span>
-											<span class="pull-right badge badge-success">+8</span>
-										</div>
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										<div class="clearfix">
-											<span class="pull-left">
-												<i class="btn btn-xs no-hover btn-info icon-twitter"></i>
-												粉丝
-											</span>
-											<span class="pull-right badge badge-info">+11</span>
-										</div>
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										查看所有通知
-										<i class="icon-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-
 					
 					</ul>
-                <!-- <div class="right_info">
-                 
-                   <div class="get_time" ><span id="time" class="time"></span>欢迎光临,管理员</span></div>
-					<ul class="nav ace-nav">	
-						<li><a href="javascript:ovid(0)" class="change_Password">修改密码</a></li>
-                        <li><a href="javascript:ovid(0)" id="Exit_system">退出系统</a></li>
-                       
-					</ul>
-				</div>-->
                 </div>
 			</div>
 		</div>
@@ -299,11 +219,11 @@ $('.change_Password').on('click', function(){
 						</div>
 					</div><!-- #sidebar-shortcuts -->
 					<ul class="nav nav-list" id="nav_list">
-				     <li class="home"><a href="javascript:void(0)" name="backMeituan/home.html" class="iframeurl" title=""><i class="icon-dashboard"></i><span class="menu-text"> 系统首页 </span></a></li>
+				     <li class="home"><a href="javascript:void(0)" name="backMeituan/home.jsp" class="iframeurl" title=""><i class="icon-dashboard"></i><span class="menu-text"> 系统首页 </span></a></li>
                      <li><a href="#" class="dropdown-toggle"><i class="icon-desktop"></i><span class="menu-text"> 产品管理 </span><b class="arrow icon-angle-down"></b></a>
 					   <ul class="submenu">
-                         <li class="home"><a  href="javascript:void(0)" name="backMeituan/Products_List.html"  title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>产品类表</a></li>
-						 <li class="home"><a href="javascript:void(0)" name="backMeituan/Category_Manage.html" title="分类管理"  class="iframeurl"><i class="icon-double-angle-right"></i>分类管理</a></li>
+					  	 <li class="home"><a  href="javascript:void(0)" name="backMeituan/Products_List.html"  title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>产品类表</a></li>
+						 <li class="home"><a href="javascript:void(0)" name="backMeituan/Category_Manage.jsp" title="分类管理"  class="iframeurl"><i class="icon-double-angle-right"></i>分类管理</a></li>
 						</ul>
 					</li>
 					
@@ -316,7 +236,7 @@ $('.change_Password').on('click', function(){
 				  </li>
 						<li><a href="#" class="dropdown-toggle"><i class="icon-edit"></i><span class="menu-text"> 消息管理 </span><b class="arrow icon-angle-down"></b></a>
 							<ul class="submenu">
-								<li class="home"><a href="javascript:void(0)" name="backMeituan/Guestbook.html" title="评价列表" class="iframeurl"><i class="icon-double-angle-right"></i>评价列表</a></li>
+								<li class="home"><a href="javascript:void(0)" name="backMeituan/Guestbook.jsp" onclick="GetAllAssess()"title="评价列表" class="iframeurl"><i class="icon-double-angle-right"></i>评价列表</a></li>
 							</ul>
 						</li>
 						
@@ -326,7 +246,7 @@ $('.change_Password').on('click', function(){
 							
 								<li class="home"><a href="javascript:void(0)" name="backMeituan/admin_Competence.html" title="权限管理"  class="iframeurl"><i class="icon-double-angle-right"></i>权限管理</a></li>
                                 <li class="home"><a href="javascript:void(0)" name="backMeituan/administrator.html" title="管理员列表" class="iframeurl"><i class="icon-double-angle-right"></i>管理员列表</a></li>
-								  <li class="home"><a href="javascript:void(0)" name="backMeituan/admin_info.html" title="个人信息" class="iframeurl"><i class="icon-double-angle-right"></i>个人信息</a></li>
+								  <li class="home"><a href="javascript:void(0)" name="backMeituan/admin_info.jsp" title="个人信息" class="iframeurl"><i class="icon-double-angle-right"></i>个人信息</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -353,7 +273,7 @@ $('.change_Password').on('click', function(){
 						</ul>
 					</div>
                     
-                 <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;"name="iframe" frameborder="0" src="backMeituan/home.html">  </iframe>
+               <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;"name="iframe" frameborder="0" src="backMeituan/home.jsp">  </iframe> 
 				 
 
 <!-- /.page-content -->

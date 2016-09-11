@@ -19,6 +19,11 @@ public class GoodsServiceImpl implements GoodsService{
 	}
 
 	@Override
+	public Good listGoodById(int gid) {
+		return goodsMapper.getGoodById(gid);
+	}
+
+	@Override
 	public List<Good> getgid(int gid) {
 		return goodsMapper.gid(gid);
 	}

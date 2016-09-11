@@ -2,14 +2,14 @@ package com.yc.meituan.entity;
 
 public class Type {
 	private int tid;
-	private String tname;
+	private String name;
 	private int tfid;
 	private String ftname;
 	
-	public String getFtname() {
+	public String getftname() {
 		return ftname;
 	}
-	public void setFtname(String ftname) {
+	public void setftname(String ftname) {
 		this.ftname = ftname;
 	}
 	public Type() {
@@ -20,11 +20,11 @@ public class Type {
 	public void setTid(int tid) {
 		this.tid = tid;
 	}
-	public String getTname() {
-		return tname;
+	public String getname() {
+		return name;
 	}
-	public void setTname(String tname) {
-		this.tname = tname;
+	public void setname(String name) {
+		this.name = name;
 	}
 	public int getTfid() {
 		return tfid;
@@ -34,7 +34,7 @@ public class Type {
 	}
 	@Override
 	public String toString() {
-		return "Type [tid=" + tid + ", tname=" + tname + ", tfid=" + tfid
+		return "Type [tid=" + tid + ", name=" + name + ", tfid=" + tfid
 				+ ", ftname=" + ftname + "]";
 	}
 }

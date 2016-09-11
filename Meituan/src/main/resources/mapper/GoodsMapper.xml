@@ -10,4 +10,8 @@
 	<select id="goodInfo" resultType="Good" parameterType="int">
 	    select g.*,a.*,b.tname  from type a,type b ,goods g where a.tfid=b.tid and g.tid=b.tid and a.tid=#{tid}
 	</select>
+	
+	<select id="getGoodById" parameterType="int" resultType="Good">
+		<include refid="selectGood"/> and g.gid=#{gid}
+	</select>
 </mapper>

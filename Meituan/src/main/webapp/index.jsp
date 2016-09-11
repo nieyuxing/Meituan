@@ -22,7 +22,7 @@
                  <a href="page/login.jsp"><span style="color:#F69">登录</span></a>&nbsp;
                  <a href="page/register.jsp">注册</a>
                  </li>
-              </ul>
+              </ul>	
               <!--上-》右 -->
               <ul class="h_top_right">
                  <li>

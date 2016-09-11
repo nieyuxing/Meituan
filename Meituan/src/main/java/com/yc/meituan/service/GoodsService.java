@@ -10,4 +10,6 @@ public interface GoodsService {
 	List<Good> getgid(int gid);
 
 	List<Good> goodInfo(int tid);
+	
+	Good listGoodById(int gid);
 }

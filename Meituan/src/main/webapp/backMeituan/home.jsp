@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,7 +31,7 @@
 						<i class="icon-user"></i>
 					</div>
 					<div class="value">
-						<h1>34522</h1>
+						<h1>${order.alluser}</h1>
 						<p>商城用户</p>
 					</div>
 				</a> </section>
@@ -39,7 +42,7 @@
 					<i class="icon-tags"></i>
 				</div>
 				<div class="value">
-					<h1>140</h1>
+					<h1>0</h1>
 					<p>分销记录</p>
 				</div>
 				</section>
@@ -50,7 +53,7 @@
 					<i class="icon-shopping-cart"></i>
 				</div>
 				<div class="value">
-					<h1>345</h1>
+					<h1>${order.allorder}</h1>
 					<p>商城订单</p>
 				</div>
 				</section>
@@ -61,7 +64,7 @@
 					<i class="icon-bar-chart"></i>
 				</div>
 				<div class="value">
-					<h1>￥34,500</h1>
+					<h1>${order.alls}</h1>
 					<p>交易记录</p>
 				</div>
 				</section>
@@ -100,6 +103,14 @@
             ],
             function (ec,theme) {
                 var myChart = ec.init(document.getElementById('main'),theme);
+                $.post("../order/data",function(data){
+                	var money=[];
+                	var mo=[];
+                	for (var i = 0; i < data.length; i++) {
+						money.push(data[i].status);
+						mo.push(data[i].morder);
+					}         		
+                
                option = {
     title : {
         text: '月购买订单交易记录',
@@ -137,7 +148,7 @@
         {
             name:'所有订单',
             type:'bar',
-            data:[120, 49, 70, 232, 256, 767, 1356, 1622, 326, 200,164, 133],
+            data:mo,
             markPoint : {
                 data : [
                     {type : 'max', name: '最大值'},
@@ -147,7 +158,7 @@
         },{
             name:'交易金额',
             type:'bar',
-            data:[26, 59, 60, 264, 287, 77, 176, 122, 247, 148, 60, 23],
+            data:money,
             markPoint : {
                 data : [
                     {name : '年最高', value : 172, xAxis: 7, yAxis: 172, symbolSize:18},
@@ -159,8 +170,10 @@
     ]
 };
                 myChart.setOption(option);
+                },'json');
             }
         );
+            
     </script>
 	</div>
 </body>

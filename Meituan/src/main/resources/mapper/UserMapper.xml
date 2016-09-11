@@ -23,4 +23,19 @@
 		select * from users where email=#{usnameOremail} or usname=#{usnameOremail}
 	</select> 
 	
+	<update id="update" parameterType="User">
+		update users set usname =#{usname}, uspwd=#{uspwd} ,telnum=#{telnum},email=#{email},idcard=#{idcard} where usid =#{usid}
+	</update>
+	
+	<select id="getUserById" parameterType="int" resultType="User">
+		select * from users where usid=#{usid}
+	</select>
+	
+	 <insert id="add" parameterType="User">
+	 	insert into users values(seq_users_usid.nextval,#{usname},#{uspwd},#{telnum},#{email},null,#{idcard},'','')
+	 </insert> 
+	 
+	 <delete id="del" parameterType="int">
+	 	delete users where usid=#{usid}
+	 </delete>
 </mapper>

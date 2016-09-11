@@ -10,4 +10,7 @@ public interface GoodsMapper {
 	List<Good> gid(int gid);
 
 	List<Good> goodInfo(int tid);
+	
+	Good getGoodById(int gid);
+
 }

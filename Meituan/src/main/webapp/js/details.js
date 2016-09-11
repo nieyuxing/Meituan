@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(function(){
 	//实物评价
 	$.get("goods/evaluate",function(data) {
@@ -30,3 +31,8 @@ $(function(){
 });
 
                                                             
+=======
+$.post("option/details?gid=" + $("#gid").val(), function(data) {
+	alert(data);
+}, "json");
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
