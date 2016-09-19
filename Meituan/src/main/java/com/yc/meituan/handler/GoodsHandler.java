@@ -3,12 +3,12 @@ package com.yc.meituan.handler;
 import java.io.PrintWriter;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
@@ -43,15 +43,6 @@ public class GoodsHandler {
 		System.out.println(goods);
 		map.put("goods", goods);
 		return "../page/typeShop";
-	}
-	
-	@RequestMapping("/shopping") 
-	public String  shopping(int gid,ModelMap map){
-		System.out.println(gid);
-		List<Good> goods=goodsService.listGoodByGid(gid);
-		System.out.println(goods);
-		map.put("goods", goods);
-		return "../page/shopping";
 	}
 	
 	@RequestMapping("/details")

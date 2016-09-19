@@ -94,7 +94,7 @@
 		</div>
 		<div id="b_body_center">
 			<ul id="types">
-
+				
 			</ul>
 		</div>
 	</div>

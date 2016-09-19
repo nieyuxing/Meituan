@@ -57,6 +57,7 @@ public class UserHandler {
 	    map.put("user", user);
 		return "../index";
  	}
+	
  	//用户注册
   @RequestMapping(value="/register",method=RequestMethod.POST)
 	public String register(User user, ModelMap map,HttpServletRequest request) {
