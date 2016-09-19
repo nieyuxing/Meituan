@@ -54,6 +54,7 @@ public class UserHandler {
 	    	map.put("errorMsg", "账号或密码错误!!!");
 	    	return "../page/login";
 	    }
+	    map.put("user", user);
 		return "../index";
  	}
  	//用户注册

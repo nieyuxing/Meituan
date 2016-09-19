@@ -11,14 +11,14 @@ public class Good {
 	private int gcount;
 	private int ecount;
 	private int tid;
+	private String tname;
+	private int state;
 		
 	public Good() {
-		super();
 	}
 
 	public Good(int gid, String gname, double gprice, String gpic, String gdetails, String sname, String sdetail,
 			int gcount, int ecount) {
-		super();
 		this.gid = gid;
 		this.gname = gname;
 		this.gprice = gprice;
@@ -110,11 +110,26 @@ public class Good {
 		this.tid = tid;
 	}
 
-	@Override
-	public String toString() {
-		return "Good [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice + ", gpic=" + gpic + ", gdetails="
-				+ gdetails + ", sname=" + sname + ", sdetail=" + sdetail + ", gcount=" + gcount + ", ecount=" + ecount
-				+ ", tid=" + tid + "]";
+	public String getTname() {
+		return tname;
 	}
 
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+	@Override
+	public String toString() {
+		return "\nGood [gid=" + gid + ", gname=" + gname + ", gprice=" + gprice + ", gpic=" + gpic + ", gdetails="
+				+ gdetails + ", sname=" + sname + ", sdetail=" + sdetail + ", gcount=" + gcount + ", ecount=" + ecount
+				+ ", tid=" + tid + ", tname=" + tname + ", state=" + state + "]";
+	}
 }

@@ -16,6 +16,8 @@ select * from orders;
 select * from evaluate;
 select * from store;
 
+select g.*,a.*,b.tname  from type a,type b ,goods g where a.tfid=b.tid and g.tid=b.tid and a.tid=113
+
 create table admins(
        aid int primary key,
        aname varchar2(20) not null,
@@ -31,7 +33,11 @@ create table users(
   telnum varchar2(45) unique ,  --电话
   email varchar2(50) unique not null,    --邮箱
   purse number(10,2),             --钱包余额
+<<<<<<< HEAD
+  idcard int,            --身份证号码
+=======
   idcard varchar2(60),            --身份证号码
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
   text1 varchar2(200),   --用户图片
   text2 varchar2(200)    --预留字段
 );
@@ -121,6 +127,12 @@ create table evaluate(
        state int  ,              --评价分数1-5
        epics varchar2(100)		--评价图片
 );
+<<<<<<< HEAD
+insert into evaluate values(seq_evaluate_eid.nextval,1021,100009,'评价内容',to_date('2015-06-08','yyyy-mm-dd'),4,'评价图片');
+
+select * from type where tname='美食'   
+=======
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 insert into evaluate values(seq_evaluate_eid.nextval,1001,100001,'这家店的东西真是太好吃了',sysdate,5,'');
 
@@ -193,6 +205,12 @@ insert into goods values(seq_goods_gid.nextval,'南岳衡山风景名胜区','20
 
 select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid
 
+<<<<<<< HEAD
+
+select * from store
+delete table users where 1=1
+=======
+>>>>>>> branch 'master' of ssh://git@github.com/nieyuxing/Meituan.git
 
 select * from goods
 delete table users where 1=1

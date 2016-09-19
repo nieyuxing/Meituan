@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -123,50 +124,25 @@
 					<div id="details-down-left-on">
 						<!--类型商品，每页显示10个-->
 						<div id="typeShop">
+							<!-- 显示商品详情 -->
+							<c:forEach var="item" items="${goods}">
 							<div class="details-down-left-class">
-								<a href="details.jsp"><img src="../images/ceshi02.jpg" alt="商品图片"
-									width="346" height="214" /></a>
+								<a href="details.jsp"><img src="../images/${item.gpic }" alt="商品图片" width="346" height="214" /></a>
 								<div class="typeShop-box01">
 									<div class="typeShop-box01-up">
-										<img src="../images/shangjia.png" alt="商家标志" /> <a href="details.jsp">吃啥有啥餐馆</a>
+										<img src="../images/shangjia.png" alt="商家标志" /> <a href="details.jsp">${item.gdetails  }</a>
 									</div>
 									<div class="typeShop-box01-down">
 										<img src="../images/pingjia04.png"><span
-											style="margin-right: 140px;"><a href=""><span>1111</span>人评价</a></span><a
-											href="typeShop.jsp">美食</a>
+											style="margin-right: 140px;"><a href=""><span>${item.ecount }</span>人评价</a></span><a
+											href="typeShop.jsp">${item.gname}</a>
 									</div>
 								</div>
 								<div class="typeShop-box02">
-									<span style="color: #F30; font-size: 18px;">￥9.99</span> 起
+									<span style="color: #F30; font-size: 18px;">${item.gprice }</span> 起
 								</div>
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
-							<div class="details-down-left-class">
-								<img src="../images/xiaoguo.jpg">
-							</div>
+							 </div>
+							</c:forEach>
 						</div>
 						<!--分页-->
 						<div class="myMeituanPageNum">
@@ -291,5 +267,7 @@
 		</div>
 		<div id="footer-box02"></div>
 	</div>
+	
+	<script type="text/javascript" src="../js/typeShop.js"></script>
 </body>
 </html>

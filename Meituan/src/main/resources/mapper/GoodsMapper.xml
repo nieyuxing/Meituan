@@ -4,6 +4,18 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.meituan.mapper.GoodsMapper">
 	<select id="listAll"  resultType="Good">
-		select g.*,s.sname sname,s.sdetail from goods g,store s where g.sid=s.sid
+		select g.*,s.sname sname,s.sdetail,t.tname,e.state from goods g,store s,type t,evaluate e where g.sid=s.sid and t.tid=g.tid and e.gid=g.gid
 	</select> 
+	
+	<select id="goodInfo" resultType="Good" parameterType="int">
+	    select g.*,a.*,b.tname  from type a,type b ,goods g where a.tfid=b.tid and g.tid=b.tid and a.tid=#{tid}
+	</select>
+	
+	<select id="getGoodById" parameterType="int" resultType="Good">
+		select g.*,s.sname sname,s.sdetail,t.tname,e.state from goods g,store s,type t,evaluate e where g.sid=s.sid and t.tid=g.tid and e.gid=g.gid and g.gid=#{gid}
+	</select>
+	
+	<select id="getGoodByGid" parameterType="int" resultType="Good">
+		select g.* from goods g where gid=#{gid}
+	</select>
 </mapper>
