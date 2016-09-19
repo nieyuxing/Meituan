@@ -82,7 +82,7 @@ create table orders(
        telnumber int ,
        status int          --金额
 );
-
+select o.* from orders o,CARTGOODS c,GOODS g where o.usid=c.usid and c.gid=g.gid
 insert into orders values(seq_orders_oid.nextval,to_date('2016-09-10','yyyy-MM-dd'),'湖南工学院',1001,'123456789',1000);
 insert into orders values(seq_orders_oid.nextval,to_date('2016-01-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',2000);
 insert into orders values(seq_orders_oid.nextval,to_date('2016-02-10','yyyy-MM-dd'),'湖南工学院',1002,'123456789',3000);
@@ -121,6 +121,8 @@ create table evaluate(
        state int  ,              --评价分数1-5
        epics varchar2(100)		--评价图片
 );
+
+insert into evaluate values(seq_evaluate_eid.nextval,1001,100001,'这家店的东西真是太好吃了',sysdate,5,'');
 
 drop sequence seq_users_usid;
 drop sequence seq_store_sid;

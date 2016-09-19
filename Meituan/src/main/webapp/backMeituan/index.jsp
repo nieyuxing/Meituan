@@ -31,7 +31,9 @@
         
 <script type="text/javascript">	
 function GetAllAssess(){
-	$.post("../a")
+	$.post("evaluate/getAll",function(data){
+		
+	})
 }
 
  $(function(){ 
