@@ -25,10 +25,8 @@ import com.yc.meituan.service.TypeService;
 public class TypeHandler {
 	@Autowired
 	private TypeService typeService;
-
 	
-	
-	@RequestMapping("/listAll")
+	@RequestMapping(value="/listAll",method=RequestMethod.GET)
 	public void listAll(PrintWriter out) {
 		List<Type> types = typeService.listAll();
 		//System.out.println(types);
@@ -37,7 +35,8 @@ public class TypeHandler {
 		out.flush();
 		out.close();
 	}
-	@RequestMapping("/findAll")
+	
+	@RequestMapping(value="/findAll",method=RequestMethod.POST)
 	public void findAll(PrintWriter out) {
 		List<Type> types = typeService.findAll();
 		System.out.println(types);
@@ -54,10 +53,10 @@ public class TypeHandler {
         map.remove("list");
 		LogManager.getLogger().debug("//按Id查询方法成功到达处理方法中.....");
 		String tid=request.getParameter("tid");
-		System.out.println(tid);
+		//System.out.println(tid);
 		Type list=typeService.findAllById(Integer.parseInt(tid));
 		map.put("list", list);
-		System.out.println(list);
+		//System.out.println(list);
 		Gson gson=new Gson();
 		out.print(gson.toJson(list));
 		out.flush();

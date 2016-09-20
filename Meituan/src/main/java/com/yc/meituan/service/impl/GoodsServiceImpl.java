@@ -33,5 +33,19 @@ public class GoodsServiceImpl implements GoodsService{
 		return goodsMapper.getGoodByGid(gid);
 	}
 
+	@Override
+	public List<Good> getTopgoods() {
+		return goodsMapper.getTopgoods();
+	}
+
+	@Override
+	public List<Good> getBigTypeInfo(String tname) {
+		return goodsMapper.getBigTypeInfoByTname(tname);
+	}
+
+	@Override
+	public List<Good> selectGoods(String gname) {
+		return goodsMapper.selectGoods(gname);
+	}
 
 }

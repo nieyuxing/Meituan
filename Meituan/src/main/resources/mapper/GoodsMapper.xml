@@ -18,4 +18,16 @@
 	<select id="getGoodByGid" parameterType="int" resultType="Good">
 		select g.* from goods g where gid=#{gid}
 	</select>
+	
+	<select id="getTopgoods"  resultType="Good">
+		select * from goods where gid between 100010 and 100018
+	</select> 
+	
+	<select id="getBigTypeInfoByTname" resultType="Good" parameterType="String">
+	  select g.gid,g.gname,g.gprice,g.gpic,g.gdetails,g.gcount,g.ecount,t.tid from goods g,type t where g.tid=t.tid and t.tname=#{tname}
+	</select>
+	
+	<select id="selectGoods" resultType="Good" parameterType="String">
+	   SELECT g.gid,g.gname,g.gprice,g.gpic,g.gdetails,g.gcount,g.ecount FROM goods g WHERE gname LIKE CONCAT(CONCAT('%', #{gname}), '%')
+	</select>
 </mapper>

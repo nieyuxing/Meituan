@@ -2,29 +2,34 @@ package com.yc.meituan.entity;
 
 public class Type {
 	private int tid;
-	private String name;
+	private String tname;
 	private int tfid;
-	private String ftname;
+	private String name;
 	
-	public String getftname() {
-		return ftname;
-	}
-	public void setftname(String ftname) {
-		this.ftname = ftname;
-	}
+	
 	public Type() {
 	}
+	
+	
+	public Type(int tid, String tname, int tfid, String name) {
+		this.tid = tid;
+		this.tname = tname;
+		this.tfid = tfid;
+		this.name = name;
+	}
+
+
 	public int getTid() {
 		return tid;
 	}
 	public void setTid(int tid) {
 		this.tid = tid;
 	}
-	public String getname() {
-		return name;
+	public String getTname() {
+		return tname;
 	}
-	public void setname(String name) {
-		this.name = name;
+	public void setTname(String tname) {
+		this.tname = tname;
 	}
 	public int getTfid() {
 		return tfid;
@@ -32,9 +37,16 @@ public class Type {
 	public void setTfid(int tfid) {
 		this.tfid = tfid;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Override
 	public String toString() {
-		return "Type [tid=" + tid + ", name=" + name + ", tfid=" + tfid
-				+ ", ftname=" + ftname + "]";
+		return "\nType [tid=" + tid + ", tname=" + tname + ", tfid=" + tfid + ", name=" + name + "]";
 	}
+	
+	
 }

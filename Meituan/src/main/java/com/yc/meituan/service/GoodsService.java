@@ -12,4 +12,11 @@ public interface GoodsService {
 	Good listGoodById(int gid);
 
 	List<Good> listGoodByGid(int gid);
+
+	List<Good> getTopgoods();
+
+	List<Good> getBigTypeInfo(String tname);
+
+	List<Good> selectGoods(String gname);
+
 }

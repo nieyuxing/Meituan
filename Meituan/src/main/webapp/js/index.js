@@ -1,7 +1,4 @@
 $(function() {
-	$.get("goods/listAll", function(data) {
-		//alert(data);
-	}, "json");
 	menuA();
 });
 
@@ -13,35 +10,14 @@ function menuA(){
 		$.get("type/listAll",function(data) {
 			var listStr = "";
 			for (var i = 0; i < data.length; i++) {
-			if (data[i].ftname == str) {
-			listStr += '<li class="typess"><a href="goods/type?tid='+data[i].tid+'">'+data[i].tname+'</a></li>';
-								}
-							}
-							$("#types").html(listStr);
-						}, "json");
-				$('#b_body_center').show();
-			});
-	$('#b_body_left>ul>li')
-			.hover(
-					function() {
-						$(this).toggleClass('sel');
-						var str = this.childNodes[0].innerHTML;
-						// alert(str);
-						$.get(
-										"type/listAll",
-										function(data) {
-											var listStr = "";
-											for (var i = 0; i < data.length; i++) {
-												if (data[i].ftname == str) {
-													listStr += '<li class="typess"><a href="goods/type?tname=data[i].tname">'
-															+ data[i].name
-															+ '</a></li>';
-												}
-											}
-											$("#types").html(listStr);
-										}, "json");
-						$('#b_body_center').show();
-					});
+				if (data[i].name == str) {
+					listStr += '<li class="typess"><a href="goods/type?tid='+data[i].tid+'">'+data[i].tname+'</a></li>';
+				}
+			}
+			$("#types").html(listStr);
+		}, "json");
+		$('#b_body_center').show();
+	});
 
 	$('#b_body_left').mouseout(function() {
 		if (!flag) {
@@ -277,12 +253,49 @@ $(function(){
 		}
 		$("#lvyouType").html(listStr);
 	}, "json");
-	
+
+
 });
-	
-	//获得
-	function getGid(){
-		
-	}
-	
-	
+//实现图片轮转
+$(function() {
+	var bannerSlider = new Slider($('#banner_tabs'), {
+		time: 5000,
+		delay: 400,
+		event: 'hover',
+		auto: true,
+		mode: 'fade',
+		controller: $('#bannerCtrl'),
+		activeControllerCls: 'active'
+	});
+	$('#banner_tabs .flex-prev').click(function() {
+		bannerSlider.prev()
+	});
+	$('#banner_tabs .flex-next').click(function() {
+		bannerSlider.next()
+	});
+
+	$.post("goods/topGoods",function(data){
+		alert(data);
+	},"json")
+
+})
+//大类型查询
+$(function(){
+	$(".b_body_left_li_a").click(
+	function() {
+		var str = this.innerHTML;
+		alert(str);
+		$.post("type/findAll", function(data) {
+			for (var i = 0; i < data.length; i++) {
+				var tname = data[i].tname;
+				if (str == tname) {
+					$.post("goods/bigTypeInfo?tname="+ encodeURI(encodeURI(tname)),
+							function(data) {
+								window.location.href = "/Meituan/"+ data + ".jsp";
+							})
+				}
+			}
+		}, "json")
+	});
+});
+

@@ -4,6 +4,21 @@ $(function(){
 });
 var flag=false;
 function menuA(){
+	$('#b_body_left>ul>li').hover(function() {
+		$(this).toggleClass('sel');
+		var str = this.childNodes[0].innerHTML;
+		$.get("type/listAll",function(data) {
+			var listStr = "";
+			for (var i = 0; i < data.length; i++) {
+			if (data[i].name == str) {
+			listStr += '<li class="typess"><a href="goods/type?tid='+data[i].tid+'">'+data[i].tname+'</a></li>';
+								}
+							}
+							$("#types").html(listStr);
+						}, "json");
+				$('#b_body_center').show();
+			});
+	
 	$("#box2").click(function() {
 		$("html,body").animate({
 			scrollTop : 0
@@ -27,6 +42,9 @@ function menuA(){
         $('#b_head_left').hover(function(){
            $("#b_body_left").css('display', 'block');
         }, function() {
+        	if($("#b_body_center").css('display', 'block')){
+       		     $("#b_body_left").css('display', 'block');
+       	     }
         	$("#b_body_left").css('display', 'none');
        	});
         
@@ -34,10 +52,13 @@ function menuA(){
            $(this).css('display', 'block');
            $("#b_body_center").css('display', 'block');
         }, function() {
+        	if($("#b_body_left").css('display', 'block')){
+        		 $(this).css('display', 'block');
+        	}
            $(this).css('display', 'none');
         });  
         
-        $('#b_body_center').hover(function(){
+        $("#b_body_center").hover(function(){
         	$("#b_body_left").css('display', 'block');
             $(this).css('display', 'block');
         }, function() {
@@ -56,3 +77,4 @@ function menuA(){
 	});
 }
 
+	

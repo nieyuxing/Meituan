@@ -13,4 +13,11 @@ public interface GoodsMapper {
 
 	List<Good> getGoodByGid(int gid);
 
+	List<Good> getTopgoods();
+
+	List<Good> getBigTypeInfoByTname(String tname);
+
+	List<Good> selectGoods(String gname);
+
+
 }

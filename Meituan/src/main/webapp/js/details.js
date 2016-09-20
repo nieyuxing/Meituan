@@ -1,5 +1,20 @@
 
 $(function(){
+	$('#b_body_left>ul>li').hover(function() {
+		$(this).toggleClass('sel');
+		var str = this.childNodes[0].innerHTML;
+		$.get("type/listAll",function(data) {
+			var listStr = "";
+			for (var i = 0; i < data.length; i++) {
+			if (data[i].name == str) {
+			listStr += '<li class="typess"><a href="goods/type?tid='+data[i].tid+'">'+data[i].tname+'</a></li>';
+								}
+							}
+							$("#types").html(listStr);
+						}, "json");
+				$('#b_body_center').show();
+			});
+	
 	//实物评价
 	$.get("goods/evaluate",function(data) {
 		var listStr ="";	

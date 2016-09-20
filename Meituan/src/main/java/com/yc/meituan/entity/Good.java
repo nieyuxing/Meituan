@@ -1,6 +1,12 @@
 package com.yc.meituan.entity;
 
-public class Good {
+import java.io.Serializable;
+
+public class Good implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2159507664795889666L;
 	private int gid;
 	private String gname;
 	private double gprice;
@@ -29,7 +35,7 @@ public class Good {
 		this.gcount = gcount;
 		this.ecount = ecount;
 	}
-
+    
 	public String getsdetail() {
 		return sdetail;
 	}
