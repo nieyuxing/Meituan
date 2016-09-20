@@ -9,6 +9,7 @@
 <link href="../css/details.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="../js/typeShop.js"></script>
+<script type="text/javascript" src="../js/shopping.js"></script>
 </head>
 
 <body>
@@ -114,8 +115,9 @@
 					</div>
 					<div class="details-up-right">
 						<div class="box01">
-							价格<span style="color: #F00; font-size: 24px; margin: 0 20px 0 24px;">￥${good.gprice }</span>
+							价格<span style="color: #F00; font-size: 24px; margin: 0 20px 0 24px;">￥<span id="shopPrice">${good.gprice }</span></span>
 						</div>
+						<input type="hidden" value="${good.gprice }" id="price" /><!--单价-->
 						<div class="box02">
 							<div class="box03">
 								已售 <span style="color: #F00; font-size: 14px;">${good.gcount }</span>
@@ -130,19 +132,15 @@
 						<div class="box01">
 							<span style="float: left;">数量</span>
 							<div class="cart-quantity">
-								<button class="minus" mt-bind-onclick="decrease()" type="button"
-									gaevent="top/minus" data-action="-">-</button>
-								<input class="text" type="text" value="1"
-									mt-bind-value="quantity" mt-bind-onkeyup="" maxlength="4"
-									autocomplete="off">
-								<button class="plus" mt-bind-onclick="increase()" type="button"
-									gaevent="top/plus" data-action="+" for="J-cart-add">+</button>
+								<button class="minus" onclick="numDec()" type="button">-</button>
+								<input class="text" type="text" value="1" id="noneText">
+								<button class="plus" onclick="numAdd()" type="button">+</button>
 							</div>
 						</div>
 						<div class="box04">
-							<form  id="" action="../page/shopping.jsp" method="post">
-								<input class="qianggou" type="submit" value="√ 立即抢购">
-							</form>
+						
+							<input class="qianggou" type="button" value="√ 立即抢购">
+							
 							<a href="../goods/shopping?gid=${good.gid}" id="che"><img src="../images/gouwuche.jpg"></a>
 						</div>
 					</div>
@@ -263,5 +261,15 @@
 		</div>
 		<div id="footer-box02"></div>
 	</div>
+	<script type="text/javascript">
+	    $(".qianggou").click(function(){
+	    	var gid=$("#gid").val();
+	    	var num=$("#noneText").val();
+	    	var price=$("#shopPrice").text();
+	    	$.post("../goodInfo/shopping",{gid:gid,gnum:num,cgprice:price},function(data){
+	    		window.location.href=data;
+	    	});
+	    })
+	</script>
 </body>
 </html>

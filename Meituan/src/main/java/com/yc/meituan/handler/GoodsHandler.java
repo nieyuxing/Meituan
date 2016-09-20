@@ -46,14 +46,12 @@ public class GoodsHandler {
 		return "../page/typeShop";
 	}
 	
-	@RequestMapping("/shopping") 
+	/*@RequestMapping("/shopping") 
 	public String  shopping(int gid,ModelMap map){
-		//System.out.println(gid);
 		List<Good> goods=goodsService.listGoodByGid(gid);
-		//System.out.println(goods);
 		map.put("goods", goods);
 		return "../page/shopping";
-	}
+	}*/
 	
 	@RequestMapping("/details")
 	public String details(int gid,ModelMap map){
@@ -66,7 +64,6 @@ public class GoodsHandler {
 	@RequestMapping(value="/topGoods",method=RequestMethod.POST)
 	public void topGoods(ModelMap map){
 		List<Good> topgoods= goodsService.getTopgoods();
-		//System.out.println(topgoods);
 		map.put("goods", topgoods);
 	} 
 	

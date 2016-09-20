@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html >
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -78,51 +79,49 @@
 							<th width="80">操作</th>
 						</tr>
 						
-					
-						<%-- <tr class="list-content01">
-							<td id="shopping001" class="cartItem" colspan="6">
-								<table id="shopping001_one" cellspacing="0">
-									<tbody>
-										<tr>
-											<td class="select-cartItem" width="60" rowspan="1" id="check">
-												<input type="checkbox" name="cartItem" id="" class=""
-												value="">
-											</td>
-											<td class="desc" width="420"><a href=""><img
-													src="../images/yangpin.jpg" width="63" height="39"><span>${good.gname }</span></a>
-											</td>
-											<td class="price" width="70">￥<span class="J-price">${good.gprice }</span>
-											</td>
-											<td class="saleNum" width="150">
-												<div class="cart-quantity">
-													<button class="minus" mt-bind-onclick="decrease()"
-														type="button" gaevent="top/minus" data-action="-">-</button>
-													<input class="text" type="text" value="1"
-														mt-bind-value="quantity" mt-bind-onkeyup="" maxlength="4"
-														autocomplete="off">
-													<button class="plus" mt-bind-onclick="increase()"
-														type="button" gaevent="top/plus" data-action="+"
-														for="J-cart-add">+</button>
-												</div>
-											</td>
-											<td class="moneyTotal" width="70">￥<span class="J-total">12.9</span>
-											</td>
-											<td class="list-delete" width="80"><a class="delete"
-												mb-onclick="" gaevent="cart/delete" data-params="" href="">删除</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</td>
-						</tr> --%>
-
+							
+							<tr class="list-content01">
+								<td id="shopping001" class="cartItem" colspan="6">
+									<table id="shopping001_one" cellspacing="0">
+										<tbody>
+											<tr>
+												<td class="select-cartItem" width="60" rowspan="1" id="check">
+													<input type="checkbox" name="cartItem" id="" class=""
+													value="">
+												</td>
+												<td class="desc" width="420"><a href="../goods/details?gid=${goodInfo.gid }"><img
+														src="../images/${goodInfo.good.gpic}" width="63" height="39"><span>${goodInfo.good.gname } : ${goodInfo.good.gdetails }</span></a>
+												</td>
+												<td class="price" width="70">￥<span class="J-price">${goodInfo.good.gprice }</span>
+												</td>
+												<td class="saleNum" width="150">
+													<div class="cart-quantity">
+														<button class="minus" onclick="numDec()" type="button">-</button>
+														<input class="text" type="text" value="1" id="noneText">
+														<button class="plus" onclick="numAdd()" type="button">+</button>
+													</div>
+												</td>
+												<td class="moneyTotal" width="70">￥<span id="shopPrice">${goodInfo.good.gprice }</span>
+												</td>
+												<input type="hidden" value="${goodInfo.good.gprice }" id="price" /><!--单价-->
+												<td class="list-delete" width="80"><a class="delete"
+													mb-onclick="" gaevent="cart/delete" data-params="" href="">删除</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						
+						
+						
 						<tr class="jiezhang">
 							<td></td>
 							<td></td>
 							<td class="jiezhan-money" colspan="4">已选<span
 								style="color: #F00">1</span>件商品&nbsp;&nbsp;<span
-								style="font-weight: bold">应付金额：</span><span
-								style="color: #F00; font-size: 24px">￥12.99</span>
+								style="font-weight: bold">应付金额：</span>
+								<span style="color: #F00; font-size: 24px">￥11 </span>
 							</td>
 						</tr>
 					</tbody>
